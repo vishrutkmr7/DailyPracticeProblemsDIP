@@ -26,20 +26,15 @@ class Solution:
         j +=1
         p2 = p2.next
 
-    sum = n1 + n2
+    s = n1 + n2
 
-    if len(str(sum)) == 4:
-        l3 = ListNode(str(sum)[3])
-        l3.next = ListNode(str(sum)[2])
-        l3.next.next = ListNode(str(sum)[1])
-        l3.next.next.next = ListNode(str(sum)[0])
-    elif len(str(sum)) == 3:
-        l3 = ListNode(str(sum)[2])
-        l3.next = ListNode(str(sum)[1])
-        l3.next.next = ListNode(str(sum)[0])
+    start_node = node = ListNode(str(s)[-1])  # initialize to last character in s
+    for c in reversed(str(s)[:-1]):
+        node.next = ListNode(c)
+        node = node.next
     
     # print("n1", n1, "n2", n2)
-    return l3
+    return start_node
 
 l1 = ListNode(2)
 l1.next = ListNode(4)
