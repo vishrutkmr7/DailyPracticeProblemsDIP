@@ -11,7 +11,10 @@ class Solution:
             if arr[i] == target:
                 pos.append(i)
         
-        return [pos[0], pos[len(pos) - 1]]
+        if len(pos) > 0:
+            return [pos[0], pos[len(pos) - 1]]
+        else:
+            return -1
   
 # Test program 
 arr = [1, 2, 2, 2, 2, 3, 4, 7, 8, 8] 
