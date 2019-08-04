@@ -66,8 +66,8 @@ node2.next = node3
 testTail = ListNode(0)
 node3.next = testTail
 
-# print("Initial list: ")
-# testHead.printList()
+print("Initial list: ")
+testHead.printList()
 # 4 3 2 1 0
 
 print("List after Iterative reversal: ")
