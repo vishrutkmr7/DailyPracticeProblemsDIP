@@ -19,9 +19,9 @@ def removeConsecutiveSumTo0(node):
             if total == 0:
                 start.next = cur.next
                 break
-                cur = cur.next
-            else:
-                start = start.next
+            cur = cur.next
+        else:
+            start = start.next
     
     return start
 
