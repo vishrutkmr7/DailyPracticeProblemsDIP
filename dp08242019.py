@@ -8,15 +8,15 @@ def witnesses(heights):
     # Fill this in.
     heights.reverse()
     n = len(heights)
-    witnesses = []
+    witness = []
     maxL = 0
 
     for i in range(0, n):
         if i == 0 or (heights[i] > maxL):
-            witnesses.append(heights[i])
+            witness.append(heights[i])
             maxL = heights[i]
     
-    return len(witnesses)
+    return len(witness)
 
 
 print (witnesses([3, 6, 3, 4, 1]))
