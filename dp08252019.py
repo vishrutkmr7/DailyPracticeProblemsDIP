@@ -4,7 +4,6 @@
 # that are prerequisites for the key. Return a valid ordering in which we can complete the courses.
 # If no such ordering exists, return NULL.
 
-from pprint import pprint
 import operator
 
 def courses_to_take(course_to_prereqs):
@@ -12,7 +11,6 @@ def courses_to_take(course_to_prereqs):
     count = {}
     final = []
     for i in course_to_prereqs:
-        # print(i)
         if i not in count.keys():
             count[i] = 0
 
