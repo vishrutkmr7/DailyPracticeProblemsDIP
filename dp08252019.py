@@ -19,6 +19,12 @@ def courses_to_take(course_to_prereqs):
                 count[j] = 1
             else:
                 count[j] += 1
+    nullChk = 0
+    for i in count:
+        nullChk += count[i]
+
+    if nullChk == 0:
+        return 'NULL'
 
     sort_count = sorted(count.items(), key=lambda kv:kv[1],reverse=True)
     # Based on the assumption that a course that appears the most amongst the prerequesites must be taken first
