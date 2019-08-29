@@ -12,16 +12,10 @@ def maximum_product_of_three(lst):
 
     if n < 3:
         return -1
-    max_prod =  -(sys.maxsize - 1)
-
-    for i in range(0, n - 2): 
-        for j in range(i + 1, n - 1): 
-            for k in range(j + 1, n): 
-                max_prod = max( 
-                    max_prod, lst[i] 
-                    * lst[j] * lst[k]) 
+    lst.sort()
   
-    return max_prod 
+    return max(lst[0] * lst[1] * lst[n - 1],  
+               lst[n - 1] * lst[n - 2] * lst[n - 3])
 
 print (maximum_product_of_three([-4, -4, 2, 8]))
 # 128
