@@ -1,21 +1,21 @@
 # This problem was recently asked by Microsoft:
 
-# You are given an array of intervals - that is, an array of tuples (start, end).
-# The array may not be sorted, and could contain overlapping intervals.Return another array where the overlapping intervals are merged.
+# You are given an array of integers.
+# Return the largest product that can be made by multiplying
+# any 3 integers in the array.
 
-def merge(intervals):
+import sys
+
+def maximum_product_of_three(lst):
     # Fill this in.
-    saved = list(intervals[0])
-    temp = []
-    for i, j in sorted([sorted(t) for t in intervals]):
-        if i <= saved[1]:
-            saved[1] = max(saved[1], j)
-        else:
-            temp.append(tuple(saved))
-            saved[0] = i
-            saved[1] = j
-    temp.append(tuple(saved))
-    return temp
+    n = len(lst)
+
+    if n < 3:
+        return -1
+    lst.sort()
   
-print (merge([(1, 3), (5, 8), (4, 10), (20, 25)]))
-# [(1, 3), (4, 10), (20, 25)]
+    return max(lst[0] * lst[1] * lst[n - 1],  
+               lst[n - 1] * lst[n - 2] * lst[n - 3])
+
+print (maximum_product_of_three([-4, -4, 2, 8]))
+# 128
