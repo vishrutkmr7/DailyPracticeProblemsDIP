@@ -1,4 +1,4 @@
-A gist of all my solutions to the Daily Practice Problems subscription from: Daily Interview Pro: https://www.techseries.dev/ by Joma (Jonathan Ma) and TechLead (Patrick Shyu): https://www.techseries.dev/daily
+A gist of all my solutions to the Daily Practice Problems subscription from: [Daily Interview Pro](https://www.techseries.dev/) by Joma (Jonathan Ma) and TechLead (Patrick Shyu): https://www.techseries.dev/daily
 
 P.S. The solution files/folders are named in the format: dp + MM/DD/YYYY + .ext
 
