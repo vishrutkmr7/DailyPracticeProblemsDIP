@@ -8,8 +8,6 @@ Open for Pull requests for a better and optimized solution with minimized hard-c
 
 Thanks!
 
-Reach out to me on Twitter: https://www.twitter.com/vishrutkmr7
-
-LinkedIn: https://www.linkedin.com/in/vishrutkmr7
+Reach out: [Stack Overflow](https://stackoverflow.com/users/8020018/vishrut-jha), [Twitter](https://www.twitter.com/vishrutkmr7), [LinkedIn](https://www/linkedin.com/in/vishrutkmr7)
 
     -@vishrutkmr7
