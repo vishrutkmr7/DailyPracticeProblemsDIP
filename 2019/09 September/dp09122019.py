@@ -50,7 +50,16 @@ def longest_substring_with_k_distinct_characters(s, k):
             max_window_size = curr_end - curr_start + 1
             max_window_start = curr_start
 
-    ans_text = str(max_window_size) + " (because '" + s[max_window_start:] \ + "' has length " + str(max_window_size) + " with " + k + " characters)"
+    ans_text = (
+        str(max_window_size)
+        + " (because '"
+        + s[max_window_start:]
+        + "' has length "
+        + str(max_window_size)
+        + " with "
+        + str(k)
+        + " characters)"
+    )
     return ans_text
 
 
