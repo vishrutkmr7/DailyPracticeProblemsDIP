@@ -5,13 +5,13 @@ on: [push]
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: macOS-latest
     
     steps:
-    - uses: actions/checkout@v1
-    - name: Run a one-line script
-      run: echo Hello, world!
-    - name: Run a multi-line script
-      run: python3
-        echo Add other actions to build,
-        echo test, and deploy your project.
+   steps:
+    - uses: actions/checkout@master
+    - uses: actions/setup-python@v1
+        with:
+        python-version: '3.x' # Version range or exact version of a Python version to use, using semvers version range syntax.
+        architecture: 'x64' # (x64 or x86)
+    - run: python dp09192019.py.py
