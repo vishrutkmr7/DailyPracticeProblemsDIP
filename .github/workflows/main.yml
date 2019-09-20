@@ -14,4 +14,4 @@ jobs:
         with:
         python-version: '3.x' # Version range or exact version of a Python version to use, using semvers version range syntax.
         architecture: 'x64' # (x64 or x86)
-    - run: python dp09192019.py.py
+    - run: python 2019/09 September/dp09192019.py.py
