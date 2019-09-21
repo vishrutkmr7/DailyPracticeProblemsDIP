@@ -5,17 +5,17 @@
 
 class Solution:
     def moveZeros(self, nums):
-        # Fill this in.
-        count = 0
-        n = len(nums)
-        for i in range(n):
-            if nums[i] != 0:
-                nums[count] = nums[i]
-                count += 1
-        # Make the rest of the elements from count to end = 0, as non 0s have been shifted 
-        while count < n:
-            nums[count] = 0
-            count += 1
+        counter = 0
+        for i in range(0, len(nums)):
+            if nums[i] == 0:
+                counter += 1
+            else:
+                if i != 0:
+                    temp = abs(i-counter)
+                    nums[temp] = nums[i]
+                    nums[i] = 0
+
+        return nums
 
 nums = [0, 0, 0, 2, 0, 1, 3, 4, 0, 0]
 Solution().moveZeros(nums)
