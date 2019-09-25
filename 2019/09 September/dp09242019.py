@@ -8,16 +8,13 @@ class Solution:
     def reverseWords(self, str):
         # Fill this in.
         temp = str.split()
-        res = []
-        for word in temp:
-            rev = "".join(reversed(word))
-            res.append(rev)
         finalStr = ""
-        for i in range(0, len(res)):
+        for i in range(0, len(temp)):
+            rev = "".join(reversed(temp[i]))
             if i == 0:
-                finalStr = res[i]
+                finalStr = rev
             else:
-                finalStr += " " + res[i]
+                finalStr += " " + rev
 
         return finalStr
 
