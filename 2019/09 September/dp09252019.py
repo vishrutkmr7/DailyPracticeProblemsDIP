@@ -5,6 +5,7 @@
 
 def findRanges(nums):
     # Fill this in.
+    nums = list(set(nums))
     temp = {}
     resArr = []
     for i in nums:
