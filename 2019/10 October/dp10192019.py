@@ -6,6 +6,13 @@
 def findSmallest(nums):
     # Fill this in.
     n = len(nums)
+    res = 1
+    for i in range(0, n):
+        if nums[i] <= res:
+            res = res + nums[i]
+        else:
+            break
+    return res
 
 
 print(findSmallest([1, 2, 3, 8, 9, 10]))
