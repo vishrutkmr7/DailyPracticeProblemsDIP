@@ -32,7 +32,7 @@ def minimum_level_sum(root):
 
         result = min(s, result)
 
-    return result
+    # return result
 
 
 #     10
