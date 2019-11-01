@@ -13,8 +13,15 @@ class ListNode(object):
 class Solution(object):
     def hasCycle(self, head):
         # Fill this in.
-        if head is None:
-            return
+        s = set()
+        temp = head
+        while temp:
+            if temp in s:
+                return True
+            s.add(temp)
+            temp = temp.next
+
+        return False
 
 
 testHead = ListNode(4)
