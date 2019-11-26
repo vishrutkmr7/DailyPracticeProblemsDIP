@@ -46,3 +46,7 @@ def findRange(nums):
 
 print(findRange([1, 7, 9, 5, 7, 8, 10]))
 # (1, 5)
+
+# Test case 11/25/2019:
+print(findRange([2, 4, 7, 5, 6, 8, 9]))
+# (2, 4)
