@@ -12,29 +12,31 @@ def findRange(nums):
             break
 
     if s == n - 1:
-        exit()
+        # Array sorted already
+        return (0, 0)
 
+    e = n - 1
     while e > 0:
-        if nums[e] > nums[e - 1]:
+        if nums[e] < nums[e - 1]:
             break
         e -= 1
-    maxA = nums[s]
-    minA = nums[s]
 
+    maxL = nums[s]
+    minL = nums[s]
     for i in range(s + 1, e + 1):
-        if nums[i] > maxA:
-            maxA = nums[i]
-        if nums[i] < minA:
-            minA = nums[i]
+        if nums[i] > maxL:
+            maxL = nums[i]
+        if nums[i] < minL:
+            minL = nums[i]
 
     for i in range(s):
-        if nums[i] > minA:
+        if nums[i] > minL:
             s = i
             break
 
     i = n - 1
     while i >= e + 1:
-        if nums[i] < maxA:
+        if nums[i] < maxL:
             e = i
             break
         i -= 1
