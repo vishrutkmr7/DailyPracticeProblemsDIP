@@ -6,16 +6,26 @@
 
 def findTime(arr, cooldown):
     # Fill this in.
-    resArr = []
     n = len(arr)
-    for i in range(0, n):
-        resArr.append(arr[i])
-        # if arr[i] == arr[i + 1]:
-        #     for j in range(0, cooldown):
-        #         resArr.append("_")
+    if cooldown <= 0 or n == 0:
+        return n
 
-    return len(resArr)
+    curr = ""
+    pre = arr[0]
+    count = 1
+    for i in range(1, n):
+        curr = arr[i]
+        if curr == pre:
+            count += cooldown
+        count += 1
+        pre = curr
+
+    return count + 1
 
 
 print(findTime([1, 1, 2, 1], 2))
 # 7
+
+# Solution: 01/02/2020: Amazon: Schedule Tasks
+print(findTime(["q", "q", "s", "q", "w", "w"], 4))
+# 6
