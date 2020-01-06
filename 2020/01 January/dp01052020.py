@@ -5,16 +5,12 @@
 
 
 def printSolution(board, N):
-    # for i in range(N):
-    #     for j in range(N):
-    #         print(board[i][j]),
-    #     print
     resArr = []
     for i in range(0, N):
         for j in range(0, N):
             if board[i][j] == 1:
                 resArr.append((i, j))
-    
+
     return resArr
 
 
