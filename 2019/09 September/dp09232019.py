@@ -30,3 +30,9 @@ def rooms(arr):
 
 print(rooms([(30, 75), (0, 50), (60, 150)]))
 # 2
+
+print(rooms([(0, 10), (10, 20)]))
+# 1
+
+print(rooms([(20, 30), (10, 21), (0, 50)]))
+# 3 (all meetings overlap at time 20)
