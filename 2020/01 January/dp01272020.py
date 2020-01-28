@@ -26,8 +26,6 @@ def closest_3sum(nums, target):
                 j = j + 1
             else:
                 k = k - 1
-        
-        
 
     return [nums[n1], nums[n2], nums[n3]]
 
