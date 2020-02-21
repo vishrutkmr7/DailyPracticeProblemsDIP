@@ -3,6 +3,7 @@
 
 NO_OF_CHARS = 256
 
+
 class Solution:
     def lengthOfLongestSubstring(self, s):
         # Fill this in.
@@ -28,11 +29,11 @@ class Solution:
 
             visited[ord(s[i])] = i
 
-        if cur_len > max_len: 
+        if cur_len > max_len:
             max_len = cur_len
-        
+
         return max_len
 
 
-print (Solution().lengthOfLongestSubstring('abrkaabcdefghijjxxx'))
+print(Solution().lengthOfLongestSubstring("abrkaabcdefghijjxxx"))
 # 10
