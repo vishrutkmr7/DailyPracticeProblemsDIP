@@ -12,25 +12,28 @@ class LRUCache:
     def __init__(self, space):
         # Fill this in.
         self.space = space
-        # { key: { value: ' ' , last: datetime } }
-        self.cacheObj = {}
-        self.lastKey = []
+        # [{ key: key, value: value }]
+        self.cache = []
 
     def get(self, key):
         # Fill this in.
-        if key in self.cacheObj.keys():
-            self.lastKey.append(key)
-            return self.cacheObj[key]
+        if key in [dicts["key"] for dicts in self.cache]:
+            ansDict = [dicts for dicts in self.cache if dicts["key"] == key]
+            val = ansDict[0]["value"]
+            # rearrange
+            self.cache.insert(0, self.cache.pop(self.cache.index(ansDict[0])))
+            return val
         else:
             return None
 
     def put(self, key, value):
         # Fill this in.
-        if len(self.cacheObj.keys()) < self.space:
-            self.cacheObj[key] = value
-        else:
-            # unused = min()
-            print(self.cacheObj.keys())
+        temp = {"key": key, "value": value}
+        if len(self.cache) >= self.space:
+            self.cache.pop()
+
+        self.cache.append(temp)
+        temp = {}
 
 
 cache = LRUCache(2)
