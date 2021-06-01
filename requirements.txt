@@ -1,4 +1,4 @@
-atomicwrites==1.2.1
+atomicwrites==1.4.0
 Django
 ipython
 ipython-genutils
