@@ -20,7 +20,7 @@ django-rest-auth==0.9.3
 django-rest-knox==3.6.0
 django-rest-passwordreset==0.9.7
 django-webpack-loader==0.6.0
-djangorestframework==3.7.7
+djangorestframework==3.11.2
 dynamic-rest==1.9.6
 fuzzywuzzy==0.17.0
 ipython==7.3.0
