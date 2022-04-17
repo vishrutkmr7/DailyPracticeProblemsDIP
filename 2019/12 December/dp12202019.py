@@ -5,10 +5,7 @@
 
 def square_numbers(nums):
     # Fill this in.
-    res = []
-    for i in nums:
-        res.append(i * i)
-
+    res = [i * i for i in nums]
     res.sort()
     return res
 

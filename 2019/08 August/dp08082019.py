@@ -10,7 +10,7 @@ class Node:
   
 def findCeilingFloor(root_node, k, floor=None, ceil=None):
     # Fill this in.
-    if root_node == None:
+    if root_node is None:
         return None
 
     while root_node != None:

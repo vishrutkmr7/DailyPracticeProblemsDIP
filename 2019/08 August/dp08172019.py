@@ -12,11 +12,7 @@ def word_search(matrix, word):
         if word in ''.join(each):
             return True
 
-    for each in transpose:
-        if word in ''.join(each):
-            return True
-
-    return False
+    return any(word in ''.join(each) for each in transpose)
   
 matrix = [
     ['F', 'A', 'C', 'I'],

@@ -16,11 +16,10 @@ class Solution(object):
         # print(symbols)
         ans = list(dominoes)
         for (i, x), (j, y) in zip(symbols, symbols[1:]):
-            if x == y:
-                for k in range(i+1, j):
+            for k in range(i+1, j):
+                if x == y:
                     ans[k] = x
-            elif x > y: #RL
-                for k in range(i+1, j):
+                elif x > y: #RL
                     ans[k] = '.LR'[(k-i > j-k) - (k-i < j-k)] # cmp : (a > b) - (a < b)
 
         return "".join(ans)

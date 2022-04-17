@@ -7,11 +7,7 @@
 
 def missing_ranges(nums, low, high):
     # Fill this in.
-    missing = []
-    for i in range(low, high + 1):
-        if i not in nums:
-            missing.append(i)
-
+    missing = [i for i in range(low, high + 1) if i not in nums]
     return findRanges(missing)
 
 
@@ -22,18 +18,17 @@ def findRanges(nums):
     temp = {}
     resArr = []
     for i in nums:
-        if i - 1 in temp.keys():
+        if i - 1 in temp:
             temp[i - 1] = i
         elif i - 1 in temp.values():
-            for key in temp.keys():
-                if i - 1 == temp[key]:
+            for key, value in temp.items():
+                if i - 1 == value:
                     foundkey = key
             temp[foundkey] = i
         else:
             temp[i] = i
 
-    keylist = list(temp.keys())
-    keylist.sort()
+    keylist = sorted(temp.keys())
     for key in keylist:
         resStr = (key, temp[key])
         resArr.append(resStr)

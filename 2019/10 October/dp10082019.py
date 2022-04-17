@@ -15,7 +15,7 @@ CHARS = 26
 class Graph(object):
     def __init__(self, V):
         self.V = V  # No. of vertices
-        self.adj = [[] for x in range(V)]  # a dynamic array
+        self.adj = [[] for _ in range(V)]
         self.inp = [0] * V
 
     # function to add an edge to graph
@@ -53,13 +53,9 @@ class Graph(object):
         # Staring Vertex must be same starting point of first DFS
         gr.DFSUtil(n, visited)
 
-        # If all vertices are not visited in second DFS, then
-        # return false
-        for i in range(self.V):
-            if len(self.adj[i]) > 0 and visited[i] == False:
-                return False
-
-        return True
+        return not any(
+            len(self.adj[i]) > 0 and visited[i] == False for i in range(self.V)
+        )
 
     # This function returns true if the directed graph has an eulerian
     # cycle, otherwise returns false
@@ -69,12 +65,7 @@ class Graph(object):
         if self.isSC() == False:
             return False
 
-        # Check if in degree and out degree of every vertex is same
-        for i in range(self.V):
-            if len(self.adj[i]) != self.inp[i]:
-                return False
-
-        return True
+        return all(len(self.adj[i]) == self.inp[i] for i in range(self.V))
 
     # A recursive function to do DFS starting from v
     def DFSUtil(self, v, visited):

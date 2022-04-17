@@ -11,11 +11,11 @@ def witnesses(heights):
     witness = []
     maxL = 0
 
-    for i in range(0, n):
+    for i in range(n):
         if i == 0 or (heights[i] > maxL):
             witness.append(heights[i])
             maxL = heights[i]
-    
+
     return len(witness)
 
 

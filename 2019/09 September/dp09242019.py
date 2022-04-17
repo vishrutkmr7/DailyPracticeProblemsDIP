@@ -9,12 +9,12 @@ class Solution:
         # Fill this in.
         temp = str.split()
         finalStr = ""
-        for i in range(0, len(temp)):
+        for i in range(len(temp)):
             rev = "".join(reversed(temp[i]))
             if i == 0:
                 finalStr = rev
             else:
-                finalStr += " " + rev
+                finalStr += f" {rev}"
 
         return finalStr
 

@@ -6,7 +6,7 @@
 def rotate_list(nums, k):
     # Fill this in.
     n = len(nums)
-    for i in range(0, k):
+    for _ in range(k):
         a.append(a[0])
         a.pop(0)
 

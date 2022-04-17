@@ -21,7 +21,7 @@ def lookandsay(n):
     if n == 2:
         return 11
     s = "11"
-    for i in range(3, n + 1):
+    for _ in range(3, n + 1):
         s += "$"
         l = len(s)
         cnt = 1  # Count of matching chars

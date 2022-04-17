@@ -4,13 +4,9 @@
 
 
 def longest_consecutive(nums):
-    # Fill this in.
-    n = len(nums)
-    s = set()
     ans = 0
-    for ele in nums:
-        s.add(ele)
-
+    s = set(nums)
+    n = len(nums)
     for i in range(n):
         if (nums[i] - 1) not in s:
             j = nums[i]

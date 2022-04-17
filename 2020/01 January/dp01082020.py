@@ -5,10 +5,7 @@
 
 def base_2(n):
     # Fill this in.
-    if n == 0:
-        return ""
-    else:
-        return base_2(n // 2) + str(n % 2)
+    return "" if n == 0 else base_2(n // 2) + str(n % 2)
 
 
 print(base_2(123))

@@ -19,16 +19,16 @@ def intersection(a, b):
     curA, curB = a, b
 
     if lenA > lenB:
-        for i in range(lenA - lenB):
+        for _ in range(lenA - lenB):
             curA = curA.next
     elif lenB > lenA:
-        for i in range(lenB - lenA):
+        for _ in range(lenB - lenA):
             curB = curB.next
-    
+
     while curB != curA:
             curB = curB.next
             curA = curA.next
-    
+
     return curA
 
 class Node(object):

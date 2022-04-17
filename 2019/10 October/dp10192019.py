@@ -7,7 +7,7 @@ def findSmallest(nums):
     # Fill this in.
     n = len(nums)
     res = 1
-    for i in range(0, n):
+    for i in range(n):
         if nums[i] <= res:
             res = res + nums[i]
         else:

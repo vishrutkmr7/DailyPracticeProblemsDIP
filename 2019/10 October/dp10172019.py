@@ -10,11 +10,11 @@ def rearrangeString(s):
     n = len(s)
     freqDict = {}
     for i in s:
-        if i not in freqDict.keys():
-            freqDict[i] = 1
-        else:
+        if i in freqDict:
             freqDict[i] += 1
 
+        else:
+            freqDict[i] = 1
     for j in list(freqDict.values()):
         if j > math.ceil(n / 2):
             return None

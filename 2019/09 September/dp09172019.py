@@ -12,7 +12,7 @@ class Solution(object):
         nums.sort()
         ans = []
 
-        for i in range(0, n - 1):
+        for i in range(n - 1):
             l = i + 1
             r = n - 1
             x = nums[i]
@@ -29,10 +29,7 @@ class Solution(object):
                 else:
                     r -= 1
 
-        if not found:
-            return "No Triplets found"
-        else:
-            return ans
+        return ans if found else "No Triplets found"
 
 
 # Test Program

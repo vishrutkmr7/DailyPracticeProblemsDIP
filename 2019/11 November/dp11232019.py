@@ -8,10 +8,10 @@
 def find_fixed_point(nums):
     # Fill this in.
     n = len(nums)
-    for i in range(0, n):
+    for i in range(n):
         if nums[i] == i:
             return i
-    
+
     return
 
 print (find_fixed_point([-5, 1, 3, 4]))

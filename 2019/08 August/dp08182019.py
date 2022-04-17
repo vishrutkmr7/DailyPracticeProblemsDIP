@@ -10,16 +10,16 @@ class Solution:
         n = len(nums)
         res = n + 1 # Initialize
 
-        for start in range(0, n):
+        for start in range(n):
             curr_sum = nums[start]
             if curr_sum > s:
                 return 1
-            
+
             for end in range(start + 1, n):
                 curr_sum += nums[end]
                 if curr_sum > s and (end - start) < res:
                     res = end - start
-        
+
         if res == n + 1:
             return 0
 

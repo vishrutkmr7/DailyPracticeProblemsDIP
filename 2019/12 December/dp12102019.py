@@ -24,9 +24,8 @@ def filter(tree, k):
     tree.left = filter(tree.left, k)
     tree.right = filter(tree.right, k)
 
-    if tree.value == k:
-        if tree.left is None and tree.right is None:
-            return None
+    if tree.value == k and tree.left is None and tree.right is None:
+        return None
 
     return tree
 

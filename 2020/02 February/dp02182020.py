@@ -18,7 +18,7 @@ class Node:
 def flatten_bst(root):
     # Fill this in.
     global last
-    if root == None:
+    if root is None:
         return
 
     left = root.left
@@ -30,7 +30,7 @@ def flatten_bst(root):
         last = root
     flatten_bst(left)
     flatten_bst(right)
-    if left == None and right == None:
+    if left is None and right is None:
         last = root
 
 

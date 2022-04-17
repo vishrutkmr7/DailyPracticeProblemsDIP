@@ -14,7 +14,7 @@ def insert(root, string):
     l = len(string)
     temp = root
 
-    for lvl in range(0, l):
+    for lvl in range(l):
         index = string[lvl]
         if temp.child != index:
             temp.child = TrieNode(index)
@@ -31,7 +31,7 @@ def findPrefixesUtil(root, prefix, n):
         prefix[n] = ""
         return
 
-    for i in range(0, n):
+    for i in range(n):
         if root.child is not None:
             prefix[n] = i
             findPrefixesUtil(root.child[i], prefix, n + 1)
@@ -42,7 +42,7 @@ def shortest_unique_prefix(words):
     n = len(words)
     root = TrieNode()
     root.freq = 0
-    for i in range(0, n):
+    for i in range(n):
         insert(root, words[i])
 
     prefix = []

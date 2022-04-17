@@ -12,9 +12,7 @@ class Node:
 
 
 def height(root):
-    if root is None:
-        return 0
-    return max(height(root.left), height(root.right)) + 1
+    return 0 if root is None else max(height(root.left), height(root.right)) + 1
 
 
 def is_height_balanced(tree):

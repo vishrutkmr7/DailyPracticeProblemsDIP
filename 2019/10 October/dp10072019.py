@@ -26,37 +26,33 @@ def decodeString(Str):
             temp = ""
             count = 0
 
-            if len(integerstack) != 0:
+            if integerstack:
                 count = integerstack[-1]
                 integerstack.pop()
 
-            while len(stringstack) != 0 and stringstack[-1] != "[":
+            while stringstack and stringstack[-1] != "[":
                 temp = stringstack[-1] + temp
                 stringstack.pop()
 
-            if len(stringstack) != 0 and stringstack[-1] == "[":
+            if stringstack and stringstack[-1] == "[":
                 stringstack.pop()
 
-            for j in range(count):
+            for _ in range(count):
                 result = result + temp
 
-            for j in range(len(result)):
-                stringstack.append(result[j])
-
+            stringstack.extend(result[j] for j in range(len(result)))
             result = ""
 
         elif Str[i] == "[":
-            if Str[i - 1] >= "0" and Str[i - 1] <= "9":
-                stringstack.append(Str[i])
-
-            else:
-                stringstack.append(Str[i])
+            if Str[i - 1] < "0" or Str[i - 1] > "9":
                 integerstack.append(1)
+
+            stringstack.append(Str[i])
 
         else:
             stringstack.append(Str[i])
 
-    while len(stringstack) != 0:
+    while stringstack:
         result = stringstack[-1] + result
         stringstack.pop()
 

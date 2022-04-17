@@ -17,9 +17,7 @@ class Node:
 
 def minValue(node):
     current = node
-    while current is not None:
-        if current.left is None:
-            break
+    while current is not None and current.left is not None:
         current = current.left
 
     return current.value
@@ -31,9 +29,7 @@ def inorder_successor(node):
         return minValue(node.right)
 
     p = node.parent
-    while p is not None:
-        if node != p.right:
-            break
+    while p is not None and node == p.right:
         node = p
         p = p.parent
     return p.value
@@ -42,17 +38,14 @@ def inorder_successor(node):
 def insert(node, data):
     if node is None:
         return Node(data)
+    if data <= node.data:
+        temp = insert(node.left, data)
+        node.left = temp
     else:
-        if data <= node.data:
-            temp = insert(node.left, data)
-            node.left = temp
-            temp.parent = node
-        else:
-            temp = insert(node.right, data)
-            node.right = temp
-            temp.parent = node
-
-        return node
+        temp = insert(node.right, data)
+        node.right = temp
+    temp.parent = node
+    return node
 
 
 tree = Node(3)

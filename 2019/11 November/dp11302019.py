@@ -9,11 +9,7 @@ def has_character_map(str1, str2):
         return False
     k = ord(str2[0]) - ord(str1[0])  # Improve k calc
 
-    for i in range(0, len(str1)):
-        if not (ord(str1[i]) + k == ord(str2[i])):
-            return False
-
-    return True
+    return all(ord(str1[i]) + k == ord(str2[i]) for i in range(len(str1)))
 
 
 print(has_character_map("abc", "def"))

@@ -13,8 +13,7 @@ class Node(object):
         # Fill this in.
         # if self.val is None:
         #     return ""
-        q = []
-        q.append(self)
+        q = [self]
         ans = ""
         while q:
             count = len(q)

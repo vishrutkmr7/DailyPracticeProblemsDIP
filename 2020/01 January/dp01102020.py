@@ -11,16 +11,9 @@ def distanceFromOrigin(point):
 
 def closest_points(points, k):
     # Fill this in.
-    distArr = []
-    for point in points:
-        distArr.append(distanceFromOrigin(point))
-
+    distArr = [distanceFromOrigin(point) for point in points]
     minIndices = sorted(range(len(distArr)), key=lambda sub: distArr[sub])[:k]
-    res = []
-    for index in minIndices:
-        res.append(points[index])
-
-    return res
+    return [points[index] for index in minIndices]
 
 
 print(closest_points([(0, 0), (1, 2), (-3, 4), (3, 1)], 2))

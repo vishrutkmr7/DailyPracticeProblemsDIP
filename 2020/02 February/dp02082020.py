@@ -11,21 +11,19 @@ class Node:
 
 
 def target_sum_bst(root, target):
-    # Fill this in.
     if root is None:
         return target == 0
-    else:
-        ans = 0
-        subSum = target - root.value
-        if subSum == 0 and root.left == None and root.right == None:
-            return True
+    ans = 0
+    subSum = target - root.value
+    if subSum == 0 and root.left is None and root.right is None:
+        return True
 
-        if root.left is not None:
-            ans = ans or target_sum_bst(root.left, subSum)
-        if root.right is not None:
-            ans = ans or target_sum_bst(root.right, subSum)
+    if root.left is not None:
+        ans = ans or target_sum_bst(root.left, subSum)
+    if root.right is not None:
+        ans = ans or target_sum_bst(root.right, subSum)
 
-        return ans
+    return ans
 
 
 #      1

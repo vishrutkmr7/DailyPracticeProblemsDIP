@@ -5,10 +5,7 @@
 
 def num_ways(n, m):
     # Fill this in.
-    if m == 1 or n == 1:
-        return 1
-    
-    return num_ways(m-1, n) + num_ways(m, n-1)
+    return 1 if m == 1 or n == 1 else num_ways(m-1, n) + num_ways(m, n-1)
 
 print (num_ways(2, 2))
 # 2

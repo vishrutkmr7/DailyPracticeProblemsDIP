@@ -9,7 +9,7 @@ def unique_combination(l, sum, K, local, A):
         res.append(tuple(local))
         return
 
-    for i in range(l, len(A), 1):
+    for i in range(l, len(A)):
         if sum + A[i] > K:
             continue
 

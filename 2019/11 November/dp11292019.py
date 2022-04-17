@@ -4,12 +4,12 @@
 
 
 class Node:
-    def __init__(list, value, next=None):
-        list.value = value
-        list.next = next
+    def __init__(self, value, next=None):
+        self.value = value
+        self.next = next
 
-    def __str__(list):
-        current = list
+    def __str__(self):
+        current = self
         ret = ""
         while current:
             ret += str(current.value)

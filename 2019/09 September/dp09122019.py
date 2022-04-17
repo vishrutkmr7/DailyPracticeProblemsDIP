@@ -7,11 +7,7 @@ MAX_CHARS = 26
 
 
 def isValid(count, k):
-    val = 0
-    for i in range(MAX_CHARS):
-        if count[i] > 0:
-            val += 1
-
+    val = sum(count[i] > 0 for i in range(MAX_CHARS))
     # Return true if k is greater than or equal to val
     return k >= val
 
@@ -50,7 +46,7 @@ def longest_substring_with_k_distinct_characters(s, k):
             max_window_size = curr_end - curr_start + 1
             max_window_start = curr_start
 
-    ans_text = (
+    return (
         str(max_window_size)
         + " (because '"
         + s[max_window_start:]
@@ -60,7 +56,6 @@ def longest_substring_with_k_distinct_characters(s, k):
         + str(k)
         + " characters)"
     )
-    return ans_text
 
 
 print(longest_substring_with_k_distinct_characters("aabcdefff", 3))

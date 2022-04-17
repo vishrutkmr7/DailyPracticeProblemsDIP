@@ -9,12 +9,12 @@ class Solution:
     def plusOne(self, digits):
         # Fill this in.
         num = ""
-        for i in range(0, len(digits)):
+        for i in range(len(digits)):
             num = num + str(digits[i])
 
         sol = int(num) + 1
         sol = list(str(sol))
-        for j in range(0, len(sol)):
+        for j in range(len(sol)):
             sol[j] = int(sol[j])
 
         return sol

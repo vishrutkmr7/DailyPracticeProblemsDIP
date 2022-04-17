@@ -12,17 +12,13 @@ class Solution:
         prev = -1
         curr = -1
         count = 0
-        i = 0
-
-        while i < len(A):
+        for i in range(len(A)):
             if A[i] != B[i]:
                 count += 1
                 if count > 2:
                     return False
                 prev = curr
                 curr = i
-            i += 1
-
         # Check if previous unmatched of A
         # is equal to curr unmatched of B
         # and also check for curr unmatched character,

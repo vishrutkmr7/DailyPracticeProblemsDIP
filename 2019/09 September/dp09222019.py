@@ -15,8 +15,8 @@ def median(stream):
     n = len(stream)
     stream.sort()
     if n % 2 == 0:
-        p = stream[int(n / 2)]
-        q = stream[int(n / 2) - 1]
+        p = stream[n // 2]
+        q = stream[n // 2 - 1]
         print((p + q) / 2)
     else:
         print(stream[int((n / 2) - 0.5)])

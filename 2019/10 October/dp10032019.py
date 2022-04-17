@@ -7,7 +7,7 @@ def findRange(nums):
     # Fill this in.
     n = len(nums)
     e = n - 1
-    for s in range(0, n - 1):
+    for s in range(n - 1):
         if nums[s] > nums[s + 1]:
             break
 
@@ -16,9 +16,7 @@ def findRange(nums):
         return (0, 0)
 
     e = n - 1
-    while e > 0:
-        if nums[e] < nums[e - 1]:
-            break
+    while e > 0 and not nums[e] < nums[e - 1]:
         e -= 1
 
     maxL = nums[s]

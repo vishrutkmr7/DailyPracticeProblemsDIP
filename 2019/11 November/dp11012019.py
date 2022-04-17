@@ -10,14 +10,14 @@ class Solution(object):
         # Fill this in.
         wordDict = {}
         for word in words:
-            if word.lower() not in wordDict.keys():
-                wordDict[word.lower()] = 1
-            else:
+            if word.lower() in wordDict:
                 wordDict[word.lower()] += 1
+            else:
+                wordDict[word.lower()] = 1
         sortWord = sorted(wordDict.items(), key=lambda x: x[1])
         sortWord.reverse()
         ans = []
-        for i in range(0, k):
+        for i in range(k):
             (word, count) = sortWord[i]
             ans.append(word)
 

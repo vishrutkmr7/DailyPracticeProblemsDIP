@@ -9,22 +9,18 @@ def findRanges(nums):
     temp = {}
     resArr = []
     for i in nums:
-        if i - 1 in temp.keys():
+        if i - 1 in temp:
             temp[i - 1] = i
         elif i - 1 in temp.values():
-            for key in temp.keys():
-                if i - 1 == temp[key]:
+            for key, value in temp.items():
+                if i - 1 == value:
                     foundkey = key
             temp[foundkey] = i
         else:
             temp[i] = i
 
-    keylist = list(temp.keys())
-    keylist.sort()
-    for key in keylist:
-        resStr = str(key) + "->" + str(temp[key])
-        resArr.append(resStr)
-
+    keylist = sorted(temp.keys())
+    resArr.extend(f"{str(key)}->{str(temp[key])}" for key in keylist)
     return resArr
 
 

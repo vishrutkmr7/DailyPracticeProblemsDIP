@@ -12,7 +12,7 @@ def buy_and_sell(arr):
 
     change = True  # Loop control
 
-    for i in range(0, len(arr) - 1):
+    for i in range(len(arr) - 1):
         sell = arr[i + 1]
 
         if change:

@@ -17,7 +17,7 @@ def inside(x, y):
 
 def is_knight_on_board(x, y, k, cache={}):
     # Fill this in.
-    dp1 = [[[0 for i in range(N + 1)] for j in range(N + 1)] for k in range(N + 1)]
+    dp1 = [[[0 for _ in range(N + 1)] for _ in range(N + 1)] for k in range(N + 1)]
 
     for i in range(N):
         for j in range(N):

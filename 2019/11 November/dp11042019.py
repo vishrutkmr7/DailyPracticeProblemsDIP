@@ -19,10 +19,7 @@ def reverse_graph(graph):
     # Fill this in.
     revG = {}
     for val, node in graph.items():
-        adj = []
-        for j in node.adjacent:
-            adj.append(j.value)
-
+        adj = [j.value for j in node.adjacent]
         for it in graph:
             if it not in revG.keys():
                 revG[it] = Node(it)

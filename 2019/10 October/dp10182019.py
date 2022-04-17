@@ -6,9 +6,7 @@ from itertools import permutations
 
 def largestNum(nums):
     # Fill this in.
-    lst = []
-    for i in permutations(nums, len(nums)):
-        lst.append("".join(map(str, i)))
+    lst = ["".join(map(str, i)) for i in permutations(nums, len(nums))]
     return max(lst)
 
 

@@ -6,11 +6,7 @@
 def generateAllSubsets(nums):
     # Fill this in.
     x = len(nums)
-    res = []
-    for i in range(1 << x):
-        res.append([nums[j] for j in range(x) if (i & (1 << j))])
-
-    return res
+    return [[nums[j] for j in range(x) if (i & (1 << j))] for i in range(1 << x)]
 
 
 print(generateAllSubsets([1, 2, 3]))

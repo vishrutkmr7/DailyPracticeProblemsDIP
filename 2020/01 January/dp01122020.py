@@ -5,10 +5,7 @@
 
 def closest_nums(nums, k, x):
     # Fill this in.
-    diffArr = []
-    for i in nums:
-        diffArr.append(abs(x - i))
-
+    diffArr = [abs(x - i) for i in nums]
     diffArr.sort()
     diffArr = diffArr[:k]
 

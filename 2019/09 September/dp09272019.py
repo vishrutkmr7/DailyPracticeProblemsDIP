@@ -6,11 +6,7 @@
 class Solution:
     def intersection(self, nums1, nums2):
         # Fill this in.
-        res = []
-        for i in nums1:
-            if i in nums2:
-                res.append(i)
-        
+        res = [i for i in nums1 if i in nums2]
         res = list(set(res))
         return res
 

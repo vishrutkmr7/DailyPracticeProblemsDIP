@@ -13,7 +13,7 @@ class Node(object):
 
 
 def getLevel(root, node, level):
-    if root == None:
+    if root is None:
         return 0
     if root.value == node:
         return level
@@ -29,7 +29,7 @@ lvlarr = []
 
 
 def printGivenLevel(root, node, level):
-    if root == None or level < 2:
+    if root is None or level < 2:
         return
     if level == 2:
         if root.left == node or root.right == node:

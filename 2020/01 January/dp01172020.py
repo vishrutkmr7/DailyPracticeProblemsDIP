@@ -4,24 +4,11 @@
 
 
 def isPrime(n):
-    if n <= 1:
-        return False
-
-    for i in range(2, n):
-        if n % i == 0:
-            return False
-
-    return True
+    return False if n <= 1 else all(n % i != 0 for i in range(2, n))
 
 
 def find_primes(n):
-    # Fill this in.
-    res = []
-    for i in range(2, n + 1):
-        if isPrime(i):
-            res.append(i)
-
-    return res
+    return [i for i in range(2, n + 1) if isPrime(i)]
 
 
 print(find_primes(14))

@@ -6,15 +6,8 @@
 class Solution: 
     def getRange(self, arr, target):
         # Fill this in.
-        pos = []
-        for i in range(0, len(arr)):
-            if arr[i] == target:
-                pos.append(i)
-        
-        if len(pos) > 0:
-            return [pos[0], pos[len(pos) - 1]]
-        else:
-            return -1
+        pos = [i for i in range(len(arr)) if arr[i] == target]
+        return [pos[0], pos[-1]] if pos else -1
   
 # Test program 
 arr = [1, 2, 2, 2, 2, 3, 4, 7, 8, 8] 

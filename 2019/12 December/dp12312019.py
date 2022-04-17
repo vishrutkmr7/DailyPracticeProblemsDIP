@@ -23,7 +23,7 @@ def notInRow(arr, row):
 
     st = set()
 
-    for i in range(0, 9):
+    for i in range(9):
         if arr[row][i] in st:
             return False
 
@@ -37,7 +37,7 @@ def notInCol(arr, col):
 
     st = set()
 
-    for i in range(0, 9):
+    for i in range(9):
         if arr[i][col] in st:
             return False
 
@@ -51,8 +51,8 @@ def notInBox(arr, startRow, startCol):
 
     st = set()
 
-    for row in range(0, 3):
-        for col in range(0, 3):
+    for row in range(3):
+        for col in range(3):
             curr = arr[row + startRow][col + startCol]
 
             if curr in st:
@@ -76,8 +76,8 @@ def isValid(arr, row, col):
 def validate_sudoku(board):
     # Fill this in.
     n = 9
-    for i in range(0, n):
-        for j in range(0, n):
+    for i in range(n):
+        for j in range(n):
 
             if not isValid(board, i, j):
                 return False

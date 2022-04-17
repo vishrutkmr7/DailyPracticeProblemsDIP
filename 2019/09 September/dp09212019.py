@@ -11,9 +11,7 @@ def groupAnagramWords(strs):
     temp = defaultdict(list)
     for ele in strs:
         temp[str(sorted(ele))].append(ele)
-    res = list(temp.values())
-
-    return res
+    return list(temp.values())
 
 
 print(groupAnagramWords(["abc", "bcd", "cba", "cbd", "efg"]))

@@ -22,10 +22,7 @@ def find_palindrome(s):
             lst.append(i)
 
     ans = np.array(lst)
-    if len(lst) > 0:
-        return np.unique(ans)
-    else:
-        return None
+    return np.unique(ans) if lst else None
 
 
 print(find_palindrome("momom"))
