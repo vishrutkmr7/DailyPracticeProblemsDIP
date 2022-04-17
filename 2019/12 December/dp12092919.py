@@ -12,12 +12,7 @@ class ListFastSum:
         self.nums = nums
 
     def sum(self, start_idx, end_idx):
-        # Fill this in.
-        sum = 0
-        for i in range(start_idx, end_idx):
-            sum += self.nums[i]
-
-        return sum
+        return sum(self.nums[i] for i in range(start_idx, end_idx))
 
 
 print(ListFastSum([1, 2, 3, 4, 5, 6, 7]).sum(2, 5))

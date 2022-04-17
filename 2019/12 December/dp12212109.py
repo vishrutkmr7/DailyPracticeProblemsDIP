@@ -20,13 +20,12 @@ def tree_level_max_sum(root):
     maxLevel = 1
     level = 0
     maxSum = root.val
-    q = []
-    q.append(root)
+    q = [root]
     while len(q) is not 0:
         levelSum = 0
         size = len(q)
 
-        for i in range(0, size):
+        for i in range(size):
             n = q[i]
 
             if n.left is not None:

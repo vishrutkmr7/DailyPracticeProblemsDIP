@@ -8,12 +8,7 @@ class Solution(object):
     def findDisappearedNumbers(self, nums):
         # Fill this in.
         n = len(nums)
-        ans = []
-        for i in range(1, n):
-            if i not in nums:
-                ans.append(i)
-
-        return ans
+        return [i for i in range(1, n) if i not in nums]
 
 
 nums = [4, 6, 2, 6, 7, 2, 1]

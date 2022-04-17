@@ -23,7 +23,7 @@ def create_height_balanced_bst(nums):
     # Fill this in.
     if not nums:
         return None
-    mid = int((len(nums)) / 2)
+    mid = (len(nums)) // 2
     root = Node(nums[mid])
     root.left = create_height_balanced_bst(nums[:mid])
     root.right = create_height_balanced_bst(nums[mid + 1 :])

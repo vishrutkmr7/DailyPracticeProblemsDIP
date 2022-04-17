@@ -16,9 +16,8 @@ def first_missing_positive(nums):
 
     l = [0] * m
     for i in range(len(nums)):
-        if nums[i] > 0:
-            if l[nums[i] - 1] != 1:
-                l[nums[i] - 1] = 1
+        if nums[i] > 0 and l[nums[i] - 1] != 1:
+            l[nums[i] - 1] = 1
 
     for i in range(len(l)):
         if l[i] == 0:

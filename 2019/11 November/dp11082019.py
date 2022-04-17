@@ -12,10 +12,11 @@ def is_valid(ip):
     for i in ip:
         if len(i) > 3 or int(i) < 0 or int(i) > 255:
             return False
-        if len(i) > 1 and int(i) == 0:
-            return False
-        if len(i) > 1 and int(i) != 0 and i[0] == "0":
-            return False
+        if len(i) > 1:
+            if int(i) == 0:
+                return False
+            if i[0] == "0":
+                return False
     return True
 
 
@@ -30,9 +31,9 @@ def ip_addresses(s, ip_parts=[]):
     for i in range(1, sz - 2):
         for j in range(i + 1, sz - 1):
             for k in range(j + 1, sz):
-                snew = snew[:k] + "." + snew[k:]
-                snew = snew[:j] + "." + snew[j:]
-                snew = snew[:i] + "." + snew[i:]
+                snew = f"{snew[:k]}.{snew[k:]}"
+                snew = f"{snew[:j]}.{snew[j:]}"
+                snew = f"{snew[:i]}.{snew[i:]}"
 
                 # Check for the validity of combination
                 if is_valid(snew):

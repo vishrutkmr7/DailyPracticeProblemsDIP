@@ -15,8 +15,7 @@ class Point:
 
 
 def calculateDistance(x1, y1, x2, y2):
-    dist = math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
-    return dist
+    return math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
 
 
 def closest_points(points, k, p):
@@ -28,7 +27,7 @@ def closest_points(points, k, p):
         dist = calculateDistance(pt.x, pt.y, p.x, p.y)
         distDict[dest] = dist
 
-    for i in range(0, k):
+    for _ in range(k):
         min_key = min(distDict.keys(), key=lambda k: distDict[k])
         res.append(min_key)
         del distDict[min_key]

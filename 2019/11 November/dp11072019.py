@@ -5,12 +5,9 @@
 
 def longest_run(n):
     # Fill this in.
-    nBin = str(bin(n).replace("0b", ""))
+    nBin = bin(n).replace("0b", "")
     binList = list(nBin.split("0"))
-    maxAns = []
-    for i in binList:
-        maxAns.append(len(i))
-
+    maxAns = [len(i) for i in binList]
     return max(maxAns)
 
 

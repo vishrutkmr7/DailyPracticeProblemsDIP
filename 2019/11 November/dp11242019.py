@@ -11,16 +11,14 @@ class Node:
 
 
 def zigzag_order(tree):
-    # Fill this in.
-    resArr = []
     if tree is None:
         return
-    currentLevel = []
     nextLevel = []
     ltr = True
 
-    currentLevel.append(tree)
-    while len(currentLevel) > 0:
+    currentLevel = [tree]
+    resArr = []
+    while currentLevel:
         temp = currentLevel.pop(-1)
         resArr.append(temp.value)
 
@@ -37,7 +35,7 @@ def zigzag_order(tree):
             if temp.left:
                 nextLevel.append(temp.left)
 
-        if len(currentLevel) == 0:
+        if not currentLevel:
             ltr = not ltr
             currentLevel, nextLevel = nextLevel, currentLevel
 

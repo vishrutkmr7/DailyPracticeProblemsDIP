@@ -25,12 +25,12 @@ class Solution:
         n1 = n0 + n1
         n2 = n1 + n2
 
-        for i in range(0, n):
+        for i in range(n):
             if i < n0:
                 nums[i] = 0
-            elif i >= n0 and i < n1:
+            elif i < n1:
                 nums[i] = 1
-            elif i >= n1 and i < n2:
+            elif i < n2:
                 nums[i] = 2
 
 

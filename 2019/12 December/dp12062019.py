@@ -22,14 +22,14 @@ def paths_through_maze(maze):
         else:
             break
 
-    for i in range(1, C, 1):
+    for i in range(1, C):
         if maze[0][i] == 0:
             maze[0][i] = -1
         else:
             break
 
-    for i in range(1, R, 1):
-        for j in range(1, C, 1):
+    for i in range(1, R):
+        for j in range(1, C):
             if maze[i][j] == 1:
                 continue  # Blockage
 
@@ -40,10 +40,7 @@ def paths_through_maze(maze):
                 maze[i][j] = maze[i][j] + maze[i][j - 1]
 
     # If the final cell is blocked
-    if maze[R - 1][C - 1] < 0:
-        return abs(maze[R - 1][C - 1])  # Count was -vely increased
-    else:
-        return 0
+    return abs(maze[R - 1][C - 1]) if maze[R - 1][C - 1] < 0 else 0
 
 
 print(paths_through_maze([[0, 1, 0], [0, 0, 1], [0, 0, 0]]))

@@ -22,12 +22,12 @@ def reverse_integer(num):
         if ((rev_num - curr_digit) // 10 != prev_rev_num): 
             print("WARNING OVERFLOWED!!!")  
             return 0
-  
+
         prev_rev_num = rev_num  
         num = num // 10
-      
-  
-    return -rev_num if (negativeFlag == True) else rev_num
+
+
+    return -rev_num if negativeFlag else rev_num
   
 print(reverse_integer(135))
 # 531

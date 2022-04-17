@@ -21,7 +21,7 @@ def sum_binary(bin1, bin2):
         carry = 0 if r < 2 else 1
 
     if carry != 0:
-        result = "1" + result
+        result = f"1{result}"
 
     return result.zfill(max_len)
 

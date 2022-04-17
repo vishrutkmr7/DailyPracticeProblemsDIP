@@ -34,7 +34,7 @@ class Graph:
 
     def numIslands(self):
         # Fill this in.
-        visited = [[False for j in range(self.COL)] for i in range(self.ROW)]
+        visited = [[False for _ in range(self.COL)] for _ in range(self.ROW)]
         count = 0
         for i in range(self.ROW):
             for j in range(self.COL):

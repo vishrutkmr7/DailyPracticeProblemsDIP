@@ -26,7 +26,7 @@ class Solution:
             prev_rev = rev
             x = x // 10  # Returns quotient floor value
 
-        return -rev if (negFlag == True) else rev
+        return -rev if negFlag else rev
 
 
 print(Solution().reverse(123))

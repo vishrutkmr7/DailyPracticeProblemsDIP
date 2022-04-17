@@ -7,16 +7,16 @@ def findPythagoreanTriplets(nums):
     # Fill this in.
     j = 0
     n = len(nums)
-    for i in range(0, (n - 2)):
+    for i in range(n - 2):
+        # Calculate square of array elements 
+        x = nums[i]*nums[i]
         for k in range(j + 1, n): 
             for j in range(i + 1, n - 1): 
-                # Calculate square of array elements 
-                x = nums[i]*nums[i] 
-                y = nums[j]*nums[j] 
-                z = nums[k]*nums[k]  
+                y = nums[j]*nums[j]
+                z = nums[k]*nums[k]
                 if (x == y + z or y == x + z or z == x + y): 
                     return True
-      
+
     # If we reach here, no triplet found 
     return False
 

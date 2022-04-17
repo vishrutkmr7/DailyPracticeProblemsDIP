@@ -11,11 +11,11 @@ class Solution(object):
         resDict = {}
         resArr = []
         for i in chars:
-            if i not in resDict.keys():
-                resDict[i] = 1
-            else:
+            if i in resDict:
                 resDict[i] += 1
 
+            else:
+                resDict[i] = 1
         for key in resDict:
             resArr.append(key)
             if resDict[key] > 1:

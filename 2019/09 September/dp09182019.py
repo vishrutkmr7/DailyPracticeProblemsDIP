@@ -41,7 +41,7 @@ def largest_bst_subtree(root):
 
 
 def isBST(root, l=None, r=None):
-    if root == None:
+    if root is None:
         return True
     if l != None and root.key <= l.key:
         return False
@@ -51,10 +51,7 @@ def isBST(root, l=None, r=None):
 
 
 def size(node):
-    if node is None:
-        return 0
-    else:
-        return size(node.left) + 1 + size(node.right)
+    return 0 if node is None else size(node.left) + 1 + size(node.right)
 
 
 def getValue(result):

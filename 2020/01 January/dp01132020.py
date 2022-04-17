@@ -5,16 +5,12 @@
 
 
 def higherIndex(arr, index):
-    for j in range(index, len(arr)):
-        if arr[j] > arr[index]:
-            return j
-
-    return -1
+    return next((j for j in range(index, len(arr)) if arr[j] > arr[index]), -1)
 
 
 def larger_number(nums):
     # Fill this in.
-    for i in range(0, len(nums)):
+    for i in range(len(nums)):
         nums[i] = higherIndex(nums, i)
 
     return nums

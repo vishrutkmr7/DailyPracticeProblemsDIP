@@ -7,7 +7,7 @@
 
 def frac_to_dec(numerator, denominator):
     # Fill this in.
-    result = [str(numerator // denominator) + "."]
+    result = [f"{str(numerator // denominator)}."]
     subresults = [numerator % denominator]
     numerator %= denominator
     while numerator != 0:

@@ -18,9 +18,7 @@ class Node:
         self.right = right
 
     def __str__(self):
-        # pre-order printing of the tree.
-        result = ""
-        result += str(self.val)
+        result = "" + str(self.val)
         if self.left:
             result += str(self.left)
         if self.right:
@@ -38,7 +36,7 @@ def serialize(root):
         serial += "# "
         # return serial
         return
-    serial += str(root.val) + " "
+    serial += f"{str(root.val)} "
     serialize(root.left)
     serialize(root.right)
 

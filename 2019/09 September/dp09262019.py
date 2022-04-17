@@ -10,7 +10,7 @@ def products(nums):
     for i in nums:
         prod *= i
 
-    for i in range(0, len(nums)):
+    for i in range(len(nums)):
         nums[i] = int(prod / nums[i])
 
     return nums

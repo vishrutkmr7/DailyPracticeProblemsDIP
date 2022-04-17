@@ -14,9 +14,8 @@ def print_level_order(root):
     # Fill this in.
     if root is None:
         return
-    queue = []
-    queue.append(root)
-    while len(queue) > 0:
+    queue = [root]
+    while queue:
         print(queue[0].val, end=" ")
         node = queue.pop(0)
         if node.left is not None:

@@ -39,5 +39,5 @@ class Solution:
 
 # Test program
 s = "tracecars"
-print(str(Solution().longestPalindrome(s)))
+print(Solution().longestPalindrome(s))
 # racecar

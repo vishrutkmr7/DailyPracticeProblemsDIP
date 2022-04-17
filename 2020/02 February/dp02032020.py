@@ -18,9 +18,7 @@ def generate_brackets(n):
 
 def _printParenthesis(str, pos, n, open, close):
     if close == n:
-        resStr = ""
-        for i in str:
-            resStr += i
+        resStr = "".join(str)
         resArr.append(resStr)
         return
     else:

@@ -18,10 +18,7 @@ def reverse_words(words):
 
     wordArr.append(temp)  # last word
     wordArr.reverse()
-    temp = ""
-
-    for word in wordArr:
-        temp += word + " "
+    temp = "".join(f"{word} " for word in wordArr)
 
     return temp
 

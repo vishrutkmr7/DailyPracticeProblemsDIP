@@ -7,10 +7,7 @@ MAX = 256
 
 
 def compare(arr1, arr2):
-    for i in range(MAX):
-        if arr1[i] != arr2[i]:
-            return False
-    return True
+    return all(arr1[i] == arr2[i] for i in range(MAX))
 
 
 def find_anagrams(s, t):

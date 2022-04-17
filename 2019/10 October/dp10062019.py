@@ -26,7 +26,7 @@ class Node(object):
                     q.append(n.left)
                 if n.right:
                     q.append(n.right)
-                num = num - 1
+                num -= 1
             if len(q):
                 result += "\n"
 
@@ -45,8 +45,7 @@ def fullBinaryTree(node):
     ):
         return node
 
-    child = Node(node.left if (node.left is not None) else node.right)
-    return child
+    return Node(node.left if (node.left is not None) else node.right)
 
 
 # Given this tree:

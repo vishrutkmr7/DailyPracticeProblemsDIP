@@ -17,14 +17,10 @@ class Node:
     def __repr__(self):
         if self in self._print_visited:
             return ""
-        else:
-            self._print_visited.add(self)
-            final_str = ""
-            for n in self.adj:
-                final_str += f"{n}\n"
-
-            self._print_visited.remove(self)
-            return final_str + f"({self.value}, ({[n.value for n in self.adj]}))"
+        self._print_visited.add(self)
+        final_str = "".join(f"{n}\n" for n in self.adj)
+        self._print_visited.remove(self)
+        return f"{final_str}({self.value}, ({[n.value for n in self.adj]}))"
 
 
 def deep_copy_graph(graph_node, visited=None):

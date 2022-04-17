@@ -19,9 +19,7 @@ def kaprekar(n):
     # Padding
     if len(descending) != 4:
         p = 4 - len(descending)
-        ad = ""
-        for i in range(p):
-            ad += "0"
+        ad = "".join("0" for _ in range(p))
         descending += ad
     return int(descending) - int(ascending)
 

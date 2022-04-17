@@ -7,32 +7,22 @@
 import operator
 
 def courses_to_take(course_to_prereqs):
-    # Fill this in.
     count = {}
-    final = []
     for i in course_to_prereqs:
         if i not in count.keys():
             count[i] = 0
 
         for j in course_to_prereqs[i]:
-            if j not in count.keys():
-                count[j] = 1
-            else:
+            if j in count:
                 count[j] += 1
-    nullChk = 0
-    for i in count:
-        nullChk += count[i]
-
+            else:
+                count[j] = 1
+    nullChk = sum(count.values())
     if nullChk == 0:
         return 'NULL'
 
     sort_count = sorted(count.items(), key=lambda kv:kv[1],reverse=True)
-    # Based on the assumption that a course that appears the most amongst the prerequesites must be taken first
-    # Pl. suggest an alternative if possible.
-    for i in sort_count:
-        final.append(i[0])
-    
-    return final
+    return [i[0] for i in sort_count]
 
 
 courses = {

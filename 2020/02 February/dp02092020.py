@@ -9,19 +9,12 @@ def majority_element(nums):
     maxCount = 0
     index = -1
     for i in range(n):
-        count = 0
-        for j in range(n):
-            if nums[i] == nums[j]:
-                count += 1
-
+        count = sum(nums[i] == nums[j] for j in range(n))
         if count > maxCount:
             maxCount = count
             index = i
 
-    if maxCount > n // 2:
-        return nums[index]
-    else:
-        return "No Majority Element"
+    return nums[index] if maxCount > n // 2 else "No Majority Element"
 
 
 print(majority_element([3, 5, 3, 3, 2, 4, 3]))

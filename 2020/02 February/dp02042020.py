@@ -7,11 +7,11 @@ def remove_dups(nums):
     # Fill this in.
     n = len(nums)
 
-    if n == 0 or n == 1:
+    if n in {0, 1}:
         return n
 
     j = 0
-    for i in range(0, n - 1):
+    for i in range(n - 1):
         if nums[i] != nums[i + 1]:
             nums[j] = nums[i]
             j += 1
@@ -19,7 +19,7 @@ def remove_dups(nums):
     nums[j] = nums[n - 1]
     j += 1
 
-    for k in range(j, n):
+    for _ in range(j, n):
         nums.pop()
     return j
 

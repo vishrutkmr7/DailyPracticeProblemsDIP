@@ -9,16 +9,16 @@ def shortest_path(file_path):
     inPath = file_path.split("/")
     resStack = []
     for path in inPath:
-        if path == "..":
-            del resStack[-1]
-        elif path == ".":
+        if path == ".":
             continue
+        elif path == "..":
+            del resStack[-1]
         else:
             resStack.append(path)
     resPath = ""
     del resStack[0]
     for path in resStack:
-        resPath = resPath + "/" + path
+        resPath = f"{resPath}/{path}"
 
     return resPath
 

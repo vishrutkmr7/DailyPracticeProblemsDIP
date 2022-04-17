@@ -15,10 +15,10 @@ def min_depth_bst(root):
     if root is None:
         return 0
 
-    if root.left is None and root.right is None:
-        return 1
-
     if root.left is None:
+        if root.right is None:
+            return 1
+
         return min_depth_bst(root.right) + 1
 
     if root.right is None:

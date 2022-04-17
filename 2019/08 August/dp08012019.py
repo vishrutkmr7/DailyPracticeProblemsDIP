@@ -12,24 +12,21 @@ class Solution:
     def isValid(self, s):
         # Fill this in.
         stack = []
-        open_list = ["[","{","("] 
+        open_list = ["[","{","("]
         close_list = ["]","}",")"]
 
         for i in s: 
             if i in open_list: 
-                stack.append(i) 
+                stack.append(i)
             elif i in close_list: 
-                pos = close_list.index(i) 
+                pos = close_list.index(i)
                 # compare with the top of the stack
-                if ((len(stack) > 0) and (open_list[pos] == stack[len(stack)-1])):
-                    stack.pop() 
+                if stack and open_list[pos] == stack[-1]:
+                    stack.pop()
                 else: 
                     return False
 
-        if len(stack) == 0: 
-            return True
-        else:
-            return False
+        return not stack
 
 # Test Program
 s = "()(){(())" 

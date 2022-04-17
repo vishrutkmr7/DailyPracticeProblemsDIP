@@ -6,14 +6,13 @@
 class Solution:
     def moveZeros(self, nums):
         counter = 0
-        for i in range(0, len(nums)):
+        for i in range(len(nums)):
             if nums[i] == 0:
                 counter += 1
-            else:
-                if i != 0:
-                    temp = abs(i-counter)
-                    nums[temp] = nums[i]
-                    nums[i] = 0
+            elif i != 0:
+                temp = abs(i-counter)
+                nums[temp] = nums[i]
+                nums[i] = 0
 
         return nums
 

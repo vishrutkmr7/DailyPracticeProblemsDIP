@@ -12,9 +12,9 @@ class Node:
         self.right = right
 
     def __repr__(self):
-        if self.left and self.right:
-            return f"({self.value}, {self.left}, {self.right})"
         if self.left:
+            if self.right:
+                return f"({self.value}, {self.left}, {self.right})"
             return f"({self.value}, {self.left})"
         if self.right:
             return f"({self.value}, None, {self.right})"
@@ -29,7 +29,7 @@ def dup_trees(root):
     def collect(node):
         if not node:
             return "#"
-        serial = "{},{},{}".format(node.value, collect(node.left), collect(node.right))
+        serial = f"{node.value},{collect(node.left)},{collect(node.right)}"
         count[serial] += 1
         if count[serial] == 2:
             ans.append(node)

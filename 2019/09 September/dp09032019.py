@@ -24,7 +24,7 @@ def merge(lists):
         status = True
         while status:
             pool.append(i.val)
-            if i.next == None:
+            if i.next is None:
                 status = False
             i = i.next
 

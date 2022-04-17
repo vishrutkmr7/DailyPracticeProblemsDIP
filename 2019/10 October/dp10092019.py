@@ -7,7 +7,7 @@
 def jumpToEnd(nums):
     # Fill this in.
     n = len(nums)
-    jumps = [0 for i in range(n)]
+    jumps = [0 for _ in range(n)]
 
     if n == 0 or nums[0] == 0:
         return float("inf")

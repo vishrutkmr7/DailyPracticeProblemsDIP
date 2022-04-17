@@ -9,7 +9,7 @@ class Solution(object):
         # Fill this in.
         dup = []
         n = len(nums)
-        for i in range(0, n):
+        for i in range(n):
             if nums[i] not in dup:
                 dup.append(nums[i])
             else:

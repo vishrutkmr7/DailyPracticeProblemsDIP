@@ -6,11 +6,8 @@
 
 def printSolution(board, N):
     resArr = []
-    for i in range(0, N):
-        for j in range(0, N):
-            if board[i][j] == 1:
-                resArr.append((i, j))
-
+    for i in range(N):
+        resArr.extend((i, j) for j in range(N) if board[i][j] == 1)
     return resArr
 
 
@@ -26,12 +23,7 @@ def isSafe(board, row, col, N):
         if board[i][j] == 1:
             return False
 
-    # Check lower diagonal on left side
-    for i, j in zip(range(row, N, 1), range(col, -1, -1)):
-        if board[i][j] == 1:
-            return False
-
-    return True
+    return all(board[i][j] != 1 for i, j in zip(range(row, N), range(col, -1, -1)))
 
 
 def solveNQUtil(board, col, N):
@@ -53,7 +45,7 @@ def solveNQUtil(board, col, N):
 def n_queens(n):
     # Fill this in.
     # n x n board
-    board = [[0 for x in range(n)] for y in range(n)]
+    board = [[0 for _ in range(n)] for _ in range(n)]
 
     if solveNQUtil(board, 0, n) == False:
         return "Solution does not exist"

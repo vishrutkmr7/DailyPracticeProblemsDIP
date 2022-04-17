@@ -21,9 +21,7 @@ class minStack(object):
 
     def pop(self):
         # Fill this in.
-        if len(self.items) == 0:
-            return None
-        return self.items.pop()
+        return None if len(self.items) == 0 else self.items.pop()
 
     def top(self):
         # Fill this in.
@@ -31,9 +29,7 @@ class minStack(object):
 
     def getMin(self):
         # Fill this in.
-        if len(self.items) == 0:
-            return None
-        return min(self.items)
+        return None if len(self.items) == 0 else min(self.items)
 
 
 x = minStack()

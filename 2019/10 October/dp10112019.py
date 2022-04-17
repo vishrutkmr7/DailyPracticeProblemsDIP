@@ -14,10 +14,7 @@ class Node:
 def is_symmetric(root):
     # Fill this in.
     mirror = Mirror(root)
-    if root == mirror:
-        return True
-    else:
-        return False
+    return root == mirror
 
 
 def Mirror(root):

@@ -14,9 +14,7 @@ def pascal_triangle_row(n):
     n = n - 1
     line = [1]
 
-    for k in range(max(n, 0)):
-        line.append(int(line[k] * (n - k) / (k + 1)))
-
+    line.extend(int(line[k] * (n - k) / (k + 1)) for k in range(max(n, 0)))
     return line
 
 

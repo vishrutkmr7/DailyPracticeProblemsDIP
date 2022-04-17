@@ -16,7 +16,7 @@ ans = []
 def findValues(root, height):
     if root is None:
         return
-    if height == 0 or height == 1:
+    if height in [0, 1]:
         ans.append(root.value)
     else:
         valuesAtHeight(root.left, height - 1)

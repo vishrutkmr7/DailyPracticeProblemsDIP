@@ -5,12 +5,7 @@ from itertools import permutations
 
 
 def permute(nums):
-    # Fill this in.
-    ans = []
-    for i in permutations(nums, len(nums)):
-        ans.append(list(i))
-
-    return ans
+    return [list(i) for i in permutations(nums, len(nums))]
 
 
 print(permute([1, 2, 3]))

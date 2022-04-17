@@ -13,7 +13,7 @@ def getSum(n):
 
 def one_bits(num):
     # Fill this in.
-    bits = str(bin(num))
+    bits = bin(num)
     n = int(bits[2:])  # remove 0b
     return getSum(n)
 

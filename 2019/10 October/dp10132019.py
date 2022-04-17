@@ -21,7 +21,7 @@ class Solution:
         elif n == 1:
             return b
         else:
-            for i in range(2, n):
+            for _ in range(2, n):
                 c = a + b
                 a = b
                 b = c

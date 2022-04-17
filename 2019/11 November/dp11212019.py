@@ -12,9 +12,9 @@ class Node:
     def __str__(self):
         result = str(self.value)
         if self.left:
-            result = result + str(self.left)
+            result += str(self.left)
         if self.right:
-            result = result + str(self.right)
+            result += str(self.right)
         return result
 
 

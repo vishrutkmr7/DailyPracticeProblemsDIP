@@ -14,7 +14,7 @@ def make_change(coins, n):
         return 0
     m = len(coins)
     res = sys.maxsize
-    for i in range(0, m):
+    for i in range(m):
         if coins[i] <= n:
             sub_res = make_change(coins, n - coins[i])
             if sub_res != sys.maxsize and sub_res + 1 < res:

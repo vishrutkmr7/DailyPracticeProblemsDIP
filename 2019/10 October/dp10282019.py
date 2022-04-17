@@ -15,12 +15,10 @@ def minimum_level_sum(root):
     if root is None:
         return
     result = root.val
-    q = []
-    q.append(root)
-
-    while len(q) != 0:
+    q = [root]
+    while q:
         s = 0
-        while len(q) != 0:
+        while q:
             temp = q[0]
             q = []
             s = s + temp.val

@@ -15,22 +15,16 @@ def getBonuses(performance):
     # Fill this in.
     n = len(performance)
     bonus = [1] * n
-    for i in range(0, n):
+    for i in range(n):
         if i == 0:
             if performance[0] > performance[1]:
                 bonus[0] += 1
         elif i == n - 1:
             bonus[i] = 1
-        else:
-            if (
-                performance[i] > performance[i - 1]
-                and performance[i] > performance[i + 1]
-            ):
+        elif performance[i] > performance[i - 1]:
+            if performance[i] > performance[i + 1]:
                 bonus[i] += 2
-            elif (
-                performance[i] > performance[i - 1]
-                and performance[i + 1] > performance[i]
-            ):
+            elif performance[i + 1] > performance[i]:
                 bonus[i] += 1
     return bonus
 

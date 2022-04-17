@@ -4,7 +4,7 @@
 
 
 def removeUtil(string, last_removed):
-    if len(string) == 0 or len(string) == 1:
+    if len(string) in {0, 1}:
         return string
 
     if string[0] == string[1]:
@@ -34,10 +34,7 @@ def remove_adjacent_dup(s):
 
 
 def toList(string):
-    x = []
-    for i in string:
-        x.append(i)
-    return x
+    return list(string)
 
 
 def toString(x):

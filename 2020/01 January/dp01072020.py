@@ -6,7 +6,7 @@
 class Graph:
     def __init__(self, V):
         self.V = V
-        self.adj = [[] for i in range(V)]
+        self.adj = [[] for _ in range(V)]
 
     def DFSUtil(self, temp, v, visited):
         visited[v] = True
@@ -21,10 +21,8 @@ class Graph:
         self.adj[w].append(v)
 
     def connectedComponents(self):
-        visited = []
         cc = []
-        for i in range(self.V):
-            visited.append(False)
+        visited = [False for _ in range(self.V)]
         for v in range(self.V):
             if visited[v] == False:
                 temp = []
