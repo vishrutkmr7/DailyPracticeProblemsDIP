@@ -17,7 +17,6 @@ def valid_palindromes(word):
     """Preprocessing."""
     word = word.lower()
     word = re.sub(r"[^a-z]", "", word)
-    print(word)
     return word == word[::-1]
 
 
