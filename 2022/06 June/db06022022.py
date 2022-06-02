@@ -14,7 +14,7 @@ Ex: Given the following strings...
 
 def check_palindrome(word):
     """
-    This is a brute force solution.
+    Used from prev. files
     """
     return word == word[::-1]
 
