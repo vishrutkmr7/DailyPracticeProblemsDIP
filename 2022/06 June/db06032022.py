@@ -19,7 +19,7 @@ def can_sum_to_k(array, k):
         return False
     if len(array) == 1:
         return array[0] == k
-    for i in enumerate(array):
+    for i in range(len(array)):
         for j in range(i + 1, len(array)):
             if array[i] + array[j] == k:
                 return True
