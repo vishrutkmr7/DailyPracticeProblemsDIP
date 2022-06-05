@@ -13,19 +13,11 @@ jewels = "AYOPD", stones = "ayopd", return 0
 
 def num_jewel_stones(jewels, stones):
     """
-    This is a brute force solution.
+    This is a somewhat optimal solution.
     """
     if len(jewels) == 0 or len(stones) == 0:
         return 0
-    if len(jewels) == 1:
-        return stones.count(jewels)
-    if len(stones) == 1:
-        return jewels.count(stones)
-    for i in range(len(jewels)):
-        for j in range(len(stones)):
-            if jewels[i] == stones[j]:
-                return 1 + num_jewel_stones(jewels, stones[j + 1 :])
-    return 0
+    return sum(stone in jewels for stone in stones)
 
 
 # Test Cases

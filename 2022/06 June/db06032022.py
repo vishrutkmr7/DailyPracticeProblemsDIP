@@ -11,22 +11,34 @@ Ex: Given the following...
 """
 
 
-def can_sum_to_k(array, k):
+# def can_sum_to_k(array, k):
+#     """
+#     This is a brute force solution.
+#     """
+#     if len(array) == 0:
+#         return False
+#     if len(array) == 1:
+#         return array[0] == k
+#     for i in range(len(array)):
+#         for j in range(i + 1, len(array)):
+#             if array[i] + array[j] == k:
+#                 return True
+#     return False
+
+
+def optimal_can_sum_to_k(array, k):
     """
-    This is a brute force solution.
+    This is an optimal solution.
     """
     if len(array) == 0:
         return False
     if len(array) == 1:
         return array[0] == k
-    for i in range(len(array)):
-        for j in range(i + 1, len(array)):
-            if array[i] + array[j] == k:
-                return True
-    return False
+    hash_map = {array[i]: True for i in range(len(array))}
+    return any(k - array[i] in hash_map for i in range(len(array)))
 
 
 # Test Cases
-print(can_sum_to_k([1, 3, 8, 2], 10))
-print(can_sum_to_k([3, 9, 13, 7], 8))
-print(can_sum_to_k([4, 2, 6, 5, 2], 4))
+print(optimal_can_sum_to_k([1, 3, 8, 2], 10))
+print(optimal_can_sum_to_k([3, 9, 13, 7], 8))
+print(optimal_can_sum_to_k([4, 2, 6, 5, 2], 4))
