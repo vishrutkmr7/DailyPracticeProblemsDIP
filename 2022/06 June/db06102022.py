@@ -22,9 +22,6 @@ class ListNode:
         else:
             print("null")
 
-    def __str__(self):
-        return str(self.val)
-
 
 def merge_lists(lst1, lst2):
     """
