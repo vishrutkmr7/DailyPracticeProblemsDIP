@@ -29,11 +29,7 @@ def remove_nth_to_last(lst, n):
     if lst is None:
         return lst
     if n == 0:
-        return lst
-    if n == 1:
-        return lst.next
-    lst.next = remove_nth_to_last(lst.next, n - 1)
-    return lst
+        return None
 
 
 # Test Cases
