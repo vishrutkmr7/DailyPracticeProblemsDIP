@@ -9,6 +9,9 @@ Ex: Given the following linked lists...
 """
 
 
+from os import lstat
+
+
 class ListNode:
     def __init__(self, node):
         self.val = node
@@ -26,10 +29,21 @@ def remove_nth_to_last(lst, n):
     """
     This is an optimal solution.
     """
-    if lst is None:
-        return lst
-    if n == 0:
-        return None
+    fast = lst
+    slow = lst
+
+    for _ in range(n):
+        fast = fast.next
+
+    if not fast:
+        return lst.next
+
+    while fast.next:
+        fast = fast.next
+        slow = slow.next
+
+    slow.next = slow.next.next
+    return lst
 
 
 # Test Cases
