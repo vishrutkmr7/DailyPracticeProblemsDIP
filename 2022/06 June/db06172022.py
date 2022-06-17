@@ -1,6 +1,6 @@
 """
 This question is asked by Google.
-Given a string only containing the following characters (,  ), {, }, [, and ]
+Given a stringing only containing the following characters (,  ), {, }, [, and ]
 return whether or not the opening and closing characters are in a valid order.
 
 Ex: Given the following strings...
@@ -11,10 +11,10 @@ Ex: Given the following strings...
 """
 
 
-def validate_characters(str):
+def validate_characters(string):
     """Using stack for this problem."""
     stack = []
-    for char in str:
+    for char in string:
         if char in ["(", "[", "{"]:
             stack.append(char)
         elif char in [")", "]", "}"]:
