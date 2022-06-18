@@ -26,9 +26,7 @@ def prep_stack(string):
 
 def compare_keystrokes(s, t):
     """Using stack for this problem."""
-    stack_s = prep_stack(s)
-    stack_t = prep_stack(t)
-    return stack_s == stack_t
+    return prep_stack(s) == prep_stack(t)
 
 
 # Test Cases
