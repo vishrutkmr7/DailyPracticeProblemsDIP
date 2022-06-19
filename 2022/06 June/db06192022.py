@@ -10,10 +10,10 @@ s = "abccbefggfe", return "a"
 """
 
 
-def remove_adjacent_duplicates(string):
+def remove_adjacent_duplicates(s):
     """Using stack for this problem."""
     stack = []
-    for char in string:
+    for char in s:
         if stack and stack[-1] == char:
             stack.pop()
         else:
