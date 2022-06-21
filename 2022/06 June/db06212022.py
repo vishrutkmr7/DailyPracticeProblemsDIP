@@ -17,15 +17,13 @@ ping(7000), return 1 (1 call within the last 3 seconds)
 
 class CallCounter:
     def __init__(self) -> None:
-        self.last_call = 0
-        self.count = 0
+        self.queue = []
 
     def ping(self, t: int) -> int:
-        if t - self.last_call > 3000:
-            self.count = 0
-        self.last_call = t
-        self.count += 1
-        return self.count
+        self.queue.append(t)
+        while self.queue[0] < t - 3000:
+            self.queue.pop(0)
+        return len(self.queue)
 
 
 # Test
