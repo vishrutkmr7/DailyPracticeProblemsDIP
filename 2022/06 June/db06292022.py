@@ -16,7 +16,8 @@ Ex: Given the following tree...
         2
          \
          100
-return 98."""
+return 98.
+"""
 
 
 class BinarySearchTree:
