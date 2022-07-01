@@ -64,6 +64,7 @@ def levelOrder(root):
         total_level = max(level, total_level)
     return result
 
+
 # Test Cases
 tree = BinarySearchTree(4)
 tree.insert(2)
