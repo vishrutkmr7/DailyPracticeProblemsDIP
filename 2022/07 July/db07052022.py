@@ -1,20 +1,22 @@
-"""
-Given a binary tree, returns of all its levels in a bottom-up fashion
-(i.e. last level towards the root). Ex: Given the following tree…
+'''
+Given a binary tree, return its zig-zag level order traversal
+(i.e. its level order traversal from left to right the first level, right to left the level the second, etc.).
 
-        2
-       / \
-      1   2
-return [[1, 2], [2]]
 Ex: Given the following tree…
 
-       7
-      / \
-    6    2
-   / \ 
-  3   3 
-return [[3, 3], [6, 2], [7]]
-"""
+    1
+   / \
+  2   3
+return [[1], [3, 2]]
+Ex: Given the following tree…
+
+    8
+   / \
+  2  29
+    /  \
+   3    9
+return [[8], [29, 2], [3, 9]]
+'''
 
 
 class BinarySearchTree:
@@ -35,7 +37,7 @@ class BinarySearchTree:
             self.right.insert(value)
 
 
-def bottoms_up(root):
+def levelOrder(root):
     queue = [(root, 0)]
     result = []
     total_level = 0
@@ -52,18 +54,26 @@ def bottoms_up(root):
         else:
             result[-1].append(node.val)
         total_level = max(level, total_level)
-    return result[::-1]
+    return result
 
 
-# Test Cases
-tree = BinarySearchTree(2)
-tree.insert(1)
+def zigzag(root):
+    levels = levelOrder(root)
+    for i in range(len(levels)):
+        if i % 2 != 0:
+            levels[i] = levels[i][::-1]
+    return levels
+
+
+# Test cases
+tree = BinarySearchTree(8)
 tree.insert(2)
-print(bottoms_up(tree))
+tree.insert(29)
+tree.insert(3)
+tree.insert(9)
+print(zigzag(tree))
 
-tree = BinarySearchTree(7)
-tree.insert(6)
+tree = BinarySearchTree(1)
 tree.insert(2)
 tree.insert(3)
-tree.insert(3)
-print(bottoms_up(tree))
+print(zigzag(tree))
