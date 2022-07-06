@@ -19,6 +19,8 @@ Ex: Given the following n-ary tree…
  19 12 90
 return [[2], [1, 6, 9], [8, 2, 2], [19, 12, 90]]
 '''
+
+
 class nAryTree:
     def __init__(self, val):
         self.val = val
@@ -27,14 +29,16 @@ class nAryTree:
     def insert(self, value):
         self.children.append(nAryTree(value))
 
+
 def nAry_Levelorder(root):
     hashMap = {}
     queue = [(root, 0)] if root else []
     while queue:
         node, lvl = queue.pop(0)
-        hashMap[lvl] = hashMap.get(lvl,[]) + [node.val]
+        hashMap[lvl] = hashMap.get(lvl, []) + [node.val]
         queue.extend((child, lvl+1) for child in node.children)
     return list(hashMap.values())
+
 
 # Test Cases
 tree = nAryTree(8)
