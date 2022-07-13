@@ -48,7 +48,7 @@ class BinarySearchTree:
 
 
 def is_valid_bst(tree):
-    return is_valid_bst_helper(tree, float('-inf'), float('inf')) if tree else False
+    return is_valid_bst_helper(tree, float('-inf'), float('inf')) if tree else True
 
 
 def is_valid_bst_helper(tree, min_val, max_val):
