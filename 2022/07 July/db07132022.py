@@ -41,16 +41,20 @@ class BinaryTree:
         self.right = None
 
 
-def dfs(tree):
-    return [tree.val] + dfs(tree.left) + dfs(tree.right) if tree else []
+def get_leaf_sequence(tree):
+    if not tree:
+        return []
+    if tree.left or tree.right:
+        return get_leaf_sequence(tree.left) + get_leaf_sequence(tree.right)
+    else:
+        return [tree.val]
 
 
 def is_same_leaf_sequence(tree1, tree2):
-    if not tree1 and not tree2:
+    if tree1 or tree2:
+        return get_leaf_sequence(tree1) == get_leaf_sequence(tree2)
+    else:
         return True
-    if not tree1 or not tree2:
-        return False
-    return dfs(tree1) == dfs(tree2)
 
 
 # Test Cases
