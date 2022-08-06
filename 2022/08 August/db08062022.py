@@ -14,29 +14,33 @@ Delete the 'e' in "beach" and add a 't' to the resulting "bach".
 """
 
 
+from functools import cache
+
+
 class Solution:
-    def min_operations(self, s, t):
-        """
-        :param s: string
-        :param t: string
-        :return: int
-        """
-        if s == t:
-            return 0
-        if len(s) > len(t):
-            return self.min_operations(t, s)
-        if len(s) == 0:
-            return len(t)
-        if s[0] == t[0]:
-            return self.min_operations(s[1:], t[1:])
-        return 1 + min(self.min_operations(s, t[1:]), self.min_operations(s[1:], t))
+    def minDistance(self, word1: str, word2: str) -> int:
+        m, n = len(word1), len(word2)
+
+        @cache
+        def dp(i, j):
+            if i == 0:
+                return j
+            if j == 0:
+                return i
+
+            l1, l2 = word1[i - 1], word2[j - 1]
+            if l1 != l2:
+                return 1 + min(dp(i, j - 1), dp(i - 1, j), dp(i - 1, j - 1))
+            return dp(i - 1, j - 1)
+
+        return dp(m, n)
 
 
 # Test Cases
 s = "cat"
 t = "bat"
-print(Solution().min_operations(s, t))
+print(Solution().minDistance(s, t))
 
 s = "beach"
 t = "batch"
-print(Solution().min_operations(s, t))
+print(Solution().minDistance(s, t))
