@@ -23,14 +23,11 @@ def is_height_balanced(tree):
     lh = height(tree.left)
     rh = height(tree.right)
 
-    if (
-        (abs(lh - rh) <= 1)
+    return (
+        abs(lh - rh) <= 1
         and is_height_balanced(tree.left) is True
         and is_height_balanced(tree.right) is True
-    ):
-        return True
-
-    return False
+    )
 
 
 #     1

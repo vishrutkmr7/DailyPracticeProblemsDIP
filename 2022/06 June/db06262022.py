@@ -104,9 +104,7 @@ def least_common_ancestors(tree, a, b):
         return tree
     left = least_common_ancestors(tree.left, a, b)
     right = least_common_ancestors(tree.right, a, b)
-    if left and right:
-        return tree
-    return left or right
+    return tree if left and right else left or right
 
 # Test cases
 tree = BinarySearchTree(7)

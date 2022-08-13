@@ -22,10 +22,7 @@ def find_num(nums, target):
     # Fill this in.
     # if not sorted, else add uptill the end of occurences for sorted
     index = getIndexPositions(nums, target)
-    if index == []:
-        return (-1, -1)
-
-    return (min(index), max(index))
+    return (-1, -1) if index == [] else (min(index), max(index))
 
 
 print(find_num([1, 1, 3, 5, 7], 1))

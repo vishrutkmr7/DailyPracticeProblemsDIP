@@ -20,16 +20,15 @@ def create_palindrome(s):
     high = len(s) - 1
 
     while low < high:
-        if s[low] == s[high]:
-            low += 1
-            high -= 1
-        else:
-            if isPalindrome(s, low + 1, high):
-                return True  # at index low
-            if isPalindrome(s, low, high - 1):
-                return True  # at index high
-            return False  # Not possible
+        if s[low] != s[high]:
+            return (
+                True
+                if isPalindrome(s, low + 1, high)
+                else bool(isPalindrome(s, low, high - 1))
+            )
 
+        low += 1
+        high -= 1
     return False  # Already Palindrome
 
 

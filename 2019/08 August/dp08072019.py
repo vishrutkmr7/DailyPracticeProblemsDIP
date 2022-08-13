@@ -13,7 +13,7 @@ def check(lst):
             if p is not None:
                 return False
             p = i
-    
+
     # credit to https://leetcode.com/articles/non-decreasing-array/
     return (p is None or p == 0 or p == len(lst)-2 or lst[p-1] <= lst[p+1] or lst[p] <= lst[p+2])
     # Time complexity: O(n), Space complexity: O(1)

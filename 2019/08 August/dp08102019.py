@@ -26,7 +26,7 @@ class MaxStack:
         for i in self.items:
             if i >= maxN:
                 maxN = i
-        
+
         return maxN
   
 s = MaxStack()

@@ -17,7 +17,7 @@ def find_cycle(graph):
 
         if found_cycle[0]:
             break
-        
+
     return found_cycle[0]
 
 def dfs_visit(G, u, found_cycle, pred_node, marked):

@@ -19,7 +19,7 @@ def sortNums(nums):
         else:
             nums[p2], nums[p3] = nums[p3], nums[p2]
             p3 -= 1
-        
+
     return nums
 
 print (sortNums([3, 3, 2, 1, 3, 2, 1]))

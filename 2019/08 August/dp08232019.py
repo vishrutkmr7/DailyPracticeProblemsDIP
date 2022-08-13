@@ -27,7 +27,7 @@ def remove_kth_from_linked_list(head, k):
             res.append(n.val)
         i += 1
         n = n.next
-    
+
     return res
 
 head = Node(1, Node(2, Node(3, Node(4, Node(5)))))

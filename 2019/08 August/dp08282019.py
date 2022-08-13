@@ -8,7 +8,7 @@ def matrix_spiral_print(M):
     ''' k - starting row index
         l - starting column index
         i - iterator '''
-    
+
     k = 0
     l = 0
     m = 4 # number of columns
@@ -19,18 +19,18 @@ def matrix_spiral_print(M):
         for i in range(l, n): 
             print(M[k][i], end = " ") 
         k += 1
-              
+
         # Last column
         for i in range(k, m): 
             print(M[i][n - 1], end = " ") 
         n -= 1
-              
+
         # Last row
         if (k < m): 
             for i in range(n - 1, (l - 1), -1) : 
                 print(M[m - 1][i], end = " ") 
             m -= 1
-              
+
         # First column
         if (l < n): 
             for i in range(m - 1, k - 1, -1) : 

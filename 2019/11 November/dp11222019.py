@@ -20,13 +20,7 @@ def utf8_validator(bytes):
     n = len(bytes)
     qual = str(BYTE_EQUAL[n])
     lead = str(bytes[0])
-    if n == 1 and lead[:1] == 0:
-        return True
-
-    if lead[: n + 1] == qual[: n + 1]:
-        return True
-
-    return False
+    return True if n == 1 and lead[:1] == 0 else lead[: n + 1] == qual[: n + 1]
 
 
 print(utf8_validator([0b00000000]))

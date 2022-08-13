@@ -20,10 +20,7 @@ class Solution:
                 if curr_sum > s and (end - start) < res:
                     res = end - start
 
-        if res == n + 1:
-            return 0
-
-        return res
+        return 0 if res == n + 1 else res
 
 print (Solution().minSubArrayLen([2, 3, 1, 2, 4, 3], 7))
 # 2
