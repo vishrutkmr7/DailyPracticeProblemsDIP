@@ -116,15 +116,16 @@ def getComputerMove(board, computerLetter):
 
     # Try to take one of the corners, if they are free.
     move = chooseRandomMoveFromList(board, [1, 3, 7, 9])
-    if move != None:
+    if move is None:
+            # Try to take the center, if it is free.
+        return (
+            5
+            if isSpaceFree(board, 5)
+            else chooseRandomMoveFromList(board, [2, 4, 6, 8])
+        )
+
+    else:
         return move
-
-    # Try to take the center, if it is free.
-    if isSpaceFree(board, 5):
-        return 5
-
-    # Move on one of the sides.
-    return chooseRandomMoveFromList(board, [2, 4, 6, 8])
 
 def isBoardFull(board):
     return not any(isSpaceFree(board, i) for i in range(1, 10))

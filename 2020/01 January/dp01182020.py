@@ -9,9 +9,7 @@ def to_hex(n):
     x = n % 16
     digits = "0123456789ABCDEF"
     rest = n // 16
-    if rest == 0:
-        return digits[x]
-    return to_hex(rest) + digits[x]
+    return digits[x] if rest == 0 else to_hex(rest) + digits[x]
 
 
 print(to_hex(123))

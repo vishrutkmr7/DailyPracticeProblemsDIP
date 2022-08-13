@@ -18,7 +18,7 @@ class Node:
         self.right = right
 
     def __str__(self):
-        result = "" + str(self.val)
+        result = f"{str(self.val)}"
         if self.left:
             result += str(self.left)
         if self.right:

@@ -22,9 +22,7 @@ class Solution:
             return 100
         if r == "D":
             return 500
-        if r == "M":
-            return 1000
-        return -1
+        return 1000 if r == "M" else -1
 
     def romanToInt(self, s):
         # Fill this in.

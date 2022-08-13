@@ -19,10 +19,7 @@ def getLevel(root, node, level):
         return level
 
     downlevel = getLevel(root.left, node, level + 1)
-    if downlevel != 0:
-        return downlevel
-
-    return getLevel(root.right, node, level + 1)
+    return downlevel if downlevel != 0 else getLevel(root.right, node, level + 1)
 
 
 lvlarr = []

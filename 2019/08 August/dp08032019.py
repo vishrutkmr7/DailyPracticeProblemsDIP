@@ -31,7 +31,7 @@ class ListNode(object):
         for i in range(1, len(finalList)):
             n.next = ListNode(finalList[i])
             n = n.next
-        
+
         return startNode
 
 
@@ -49,7 +49,7 @@ class ListNode(object):
             for i in range(1, len(self.finalList)):
                 n.next = ListNode(self.finalList[i])
                 n = n.next
-            
+
             return startNode
 
 

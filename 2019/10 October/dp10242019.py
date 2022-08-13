@@ -27,9 +27,7 @@ def traverse_list(node):
 def is_palindrome(node):
     # Fill this in.
     l = traverse_list(node)
-    if l == l[::-1]:
-        return True
-    return False
+    return l == l[::-1]
 
 
 node = Node("a")

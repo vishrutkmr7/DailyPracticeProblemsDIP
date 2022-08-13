@@ -52,7 +52,7 @@ def integer_to_roman(num):
             if num <= 0:
                 break
 
-    return "".join([a for a in roman_num(num)])
+    return "".join(list(roman_num(num)))
 
 
 print(integer_to_roman(1000))

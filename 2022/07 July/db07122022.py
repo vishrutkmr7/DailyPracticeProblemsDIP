@@ -32,11 +32,17 @@ def is_symmetric(tree):
 
 
 def is_symmetric_helper(tree1, tree2):
-    if not tree1 and not tree2:
+    if tree1 or tree2:
+        return (
+            False
+            if not tree1 or not tree2
+            else tree1.val == tree2.val
+            and is_symmetric_helper(tree1.left, tree2.right)
+            and is_symmetric_helper(tree1.right, tree2.left)
+        )
+
+    else:
         return True
-    if not tree1 or not tree2:
-        return False
-    return tree1.val == tree2.val and is_symmetric_helper(tree1.left, tree2.right) and is_symmetric_helper(tree1.right, tree2.left)
 
 
 # Test Cases

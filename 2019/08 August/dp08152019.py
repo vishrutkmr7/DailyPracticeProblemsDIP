@@ -15,9 +15,9 @@ def findSequence(seq):
         if j >= 0 and seq[j] != seq[k]:
             maxLen = max(k - i, maxLen)
             i = j + 1
-        
+
         j = k - 1
-        
+
     return max(len(seq) - i, maxLen)
 
 
