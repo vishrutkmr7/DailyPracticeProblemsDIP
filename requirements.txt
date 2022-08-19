@@ -8,5 +8,5 @@ py
 python3-openid==3.2.0
 requests
 bs4==0.0.1
-num2words==0.5.11
+num2words==0.5.12
 numpy==1.23.1
