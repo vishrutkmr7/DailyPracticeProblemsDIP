@@ -28,6 +28,24 @@ class TreeNode:
 
 
 class Solution:
+    def pathSum2(self, root: TreeNode, k: int) -> int:
+        if not root:
+            return 0
+
+        stack = [(root, [root.val])]
+        num = 0
+
+        while stack:
+            n, sums = stack.pop()
+            num += len([s for s in sums if s == k])
+
+            if n.left:
+                stack.append((n.left, [s + n.left.val for s in sums] + [n.left.val]))
+            if n.right:
+                stack.append((n.right, [s + n.right.val for s in sums] + [n.right.val]))
+
+        return num
+
     def pathSum(self, root: TreeNode, k: int) -> int:
         return (
             self.pathSumFrom(root, k)
@@ -50,5 +68,5 @@ class Solution:
 # Test Cases
 if __name__ == "__main__":
     solution = Solution()
-    print(solution.pathSum(TreeNode(3, TreeNode(1), TreeNode(8)), 11))
-    print(solution.pathSum(TreeNode(2, TreeNode(-4, TreeNode(2)), TreeNode(9)), 2))
+    print(solution.pathSum2(TreeNode(3, TreeNode(1), TreeNode(8)), 11))
+    print(solution.pathSum2(TreeNode(2, TreeNode(-4, TreeNode(2)), TreeNode(9)), 2))
