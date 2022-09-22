@@ -24,6 +24,13 @@ class TreeNode:
         self.left = left
         self.right = right
 
+    def traverse(self):
+        print(self.val)
+        if self.left:
+            self.left.traverse()
+        if self.right:
+            self.right.traverse()
+
 
 class Solution:
     def insertIntoBST(self, root: TreeNode, val: int) -> TreeNode:
@@ -34,3 +41,15 @@ class Solution:
         else:
             root.right = self.insertIntoBST(root.right, val)
         return root
+
+
+# Test Cases
+if __name__ == "__main__":
+    solution = Solution()
+    root = TreeNode(2)
+    root.left = TreeNode(1)
+    root.right = TreeNode(3)
+    root.traverse()
+    print("After Insertion")
+    root = solution.insertIntoBST(root, 4)
+    root.traverse()
