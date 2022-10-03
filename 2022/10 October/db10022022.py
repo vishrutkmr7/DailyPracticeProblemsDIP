@@ -30,17 +30,17 @@ class Solution:
         Space: O(n)
         """
         colors = {}
-        for node in enumerate(graph):
-            if node[0] not in colors:
-                colors[node[0]] = 0
-                queue = [node[0]]
+        for node in range(len(graph)):
+            if node not in colors:
+                colors[node] = 0
+                queue = [node]
                 while queue:
                     node = queue.pop(0)
-                    for neighbor in graph[node[0]]:
+                    for neighbor in graph[node]:
                         if neighbor not in colors:
-                            colors[neighbor] = colors[node[0]] ^ 1
+                            colors[neighbor] = colors[node] ^ 1
                             queue.append(neighbor)
-                        elif colors[neighbor] == colors[node[0]]:
+                        elif colors[neighbor] == colors[node]:
                             return False
         return True
 
