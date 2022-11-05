@@ -31,6 +31,8 @@ class TreeNode:
 
 class Solution:
     def levelUp(self, root):
+        """Greater sum tree"""
+
         def helper(root, total):
             if not root:
                 return total
