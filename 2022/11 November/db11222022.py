@@ -1,6 +1,6 @@
 """
 Given the reference to two linked lists, return the node at which they intersect.
-Note: If the two lists never intersect, return null. 
+Note: If the two lists never intersect, return null.
 
 Ex: Given the following linked lists...
 
