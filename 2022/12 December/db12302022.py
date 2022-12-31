@@ -1,5 +1,5 @@
-"""Y
-ou and your friend are playing a game. In this game, there are piles of pennies in front of you given by an array piles where
+"""
+You and your friend are playing a game. In this game, there are piles of pennies in front of you given by an array piles where
 piles[i] represents the total number of pennies in the ith pile. In this game, you and your friend take turns removing a pile
 from the beginning or end of piles. Once all the pennies are gone, the person who has gathered the most pennies wins.
 Given that you move first, return whether or not you can win assuming that you and your friend are both playing optimally.
