@@ -17,3 +17,9 @@ class Solution:
             if flag:
                 count += len(word)
         return count
+
+
+# Test Cases
+if __name__ == "__main__":
+    solution = Solution()
+    print(solution.countCharacters(["abc", "cab"], "bac"))
