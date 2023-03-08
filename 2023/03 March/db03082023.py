@@ -14,8 +14,7 @@ num = 38, return false.
 
 class Solution:
     def isMagical(self, num: int) -> bool:
-        k = len(str(num))
-        return num == sum(int(digit) ** k for digit in str(num))
+        return num == sum(int(digit) ** len(str(num)) for digit in str(num))
 
 
 # Test Cases
