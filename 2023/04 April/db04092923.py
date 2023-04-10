@@ -30,3 +30,12 @@ class Solution:
             and abs(tup[2] - tup[1]) <= b
         ):
             return tup
+
+
+# Test Cases
+if __name__ == "__main__":
+    solution = Solution()
+    assert solution.countGoodTriplets([1, 2, 3], 3, 2, 5) == 1
+    assert solution.countGoodTriplets([1, 1, 2, 2, 3], 0, 0, 1) == 0
+    assert solution.countGoodTriplets([7, 3, 7, 3, 12, 1, 12, 2, 3], 5, 8, 1) == 12
+    print("All test cases passed!")
