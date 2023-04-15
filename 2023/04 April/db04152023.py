@@ -5,7 +5,7 @@ difference you can create between the largest and the smallest value in nums aft
 
 Ex: Given the following nums…
 
-nums = [5, 5, 0, 1, 1, 4, 6], return 2 (update 0, 1, and 1 to be 4, then the differece is 6 - 4 = 2).
+nums = [5, 5, 0, 1, 1, 4, 6], return 2 (update 0, 1, and 1 to be 4, then the differece is 6 - 4 = 2)
 Ex: Given the following nums…
 
 nums = [4, 5, 20, 14, 19], return 1.
